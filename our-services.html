@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services — Aristofersólio | Life Science Marketing Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #F9F9F8;
+            --ink: #0F1923;
+            --accent: #1440D0;
+            --mid: #5C6980;
+            --border: #E0E5EE;
+            --white: #FFFFFF;
+            --pad: clamp(80px, 10vw, 140px);
+            --gutter: clamp(24px, 5vw, 80px);
+            --max: 1240px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', sans-serif; font-weight: 300;
+            background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; text-decoration: none; }
+        img { display: block; max-width: 100%; }
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+        /* NAV */
+        nav {
+            position: fixed; inset: 0 0 auto; z-index: 100;
+            background: rgba(249, 249, 248, 0.90);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 500; letter-spacing: 0.02em; }
+        .nav-links { display: flex; gap: 36px; list-style: none; }
+        .nav-links a { font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--mid); transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+        .nav-cta { display: inline-block; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--ink); padding: 11px 28px; transition: background 0.2s, color 0.2s; }
+        .nav-cta:hover { background: var(--ink); color: var(--white); }
+        nav.at-top { background: transparent; border-bottom-color: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+        nav.at-top .nav-logo, nav.at-top .nav-links a, nav.at-top .nav-cta { color: #F4F7FF; }
+        nav.at-top .nav-links a.active, nav.at-top .nav-links a:hover { color: #fff; }
+        nav.at-top .nav-cta { border-color: rgba(255,255,255,0.45); }
+        nav.at-top .nav-cta:hover { background: #fff; color: #0A1220; }
+
+        /* COMPACT HERO */
+        .hero {
+            min-height: 66svh; padding-top: 68px; display: grid; align-items: center;
+            padding-bottom: clamp(40px, 6vh, 72px); position: relative; overflow: hidden;
+            background: radial-gradient(120% 110% at 70% 24%, #0E1B33 0%, #070D18 58%, #04070F 100%);
+            color: #F4F7FF;
+        }
+        .hero-canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+        .hero-veil {
+            position: absolute; inset: 0; z-index: 0; pointer-events: none;
+            background: linear-gradient(180deg, rgba(4,7,15,0.35) 0%, rgba(4,7,15,0) 24%, rgba(4,7,15,0) 46%, rgba(4,7,15,0.18) 66%, rgba(4,7,15,0.34) 82%, rgba(4,7,15,0.55) 100%);
+        }
+        .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #7FB2FF; }
+        .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; flex-shrink: 0; }
+        .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 7.5vw, 100px); font-weight: 300; line-height: 0.96; letter-spacing: -0.025em; color: #F4F7FF; margin-bottom: 32px; }
+        .hero-title em { font-style: italic; color: #8FBEFF; }
+        .hero-lead { font-size: clamp(15px, 1.5vw, 18px); line-height: 1.78; color: rgba(244,247,255,0.62); max-width: 600px; }
+
+        /* SECTION + LABEL */
+        .section { padding: var(--pad) 0; }
+        .s-label { display: flex; align-items: center; gap: 14px; margin-bottom: 52px; }
+        .s-label::before { content: ''; width: 28px; height: 1px; background: var(--accent); flex-shrink: 0; }
+        .s-label span { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+
+        /* SERVICES GRID */
+        .services-list {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1px; background: var(--border); border: 1px solid var(--border);
+        }
+        .svc { background: var(--bg); padding: 44px 38px 48px; transition: background 0.25s; }
+        .svc:hover { background: var(--white); }
+        .svc-icon { color: var(--accent); margin-bottom: 26px; height: 30px; }
+        .svc-icon svg { width: 30px; height: 30px; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+        .svc h3 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 25px; line-height: 1.1; letter-spacing: -0.01em; margin-bottom: 16px; }
+        .svc p { font-size: 14.5px; line-height: 1.7; color: var(--mid); }
+
+        /* PROCESS BAND */
+        .process { background: var(--ink); color: var(--white); }
+        .process .s-label::before { background: rgba(255,255,255,0.2); }
+        .process .s-label span { color: rgba(255,255,255,0.35); }
+        .process-head { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 52px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; max-width: 20ch; margin-bottom: 12px; }
+        .process-sub { font-size: 15px; color: rgba(255,255,255,0.45); max-width: 52ch; line-height: 1.7; margin-bottom: 72px; }
+        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+        .step { padding: 32px 28px 8px 0; border-top: 1px solid rgba(255,255,255,0.16); }
+        .step-num { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: rgba(143,190,255,0.5); margin-bottom: 20px; }
+        .step-phase { font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: #8FBEFF; margin-bottom: 8px; }
+        .step-title { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; line-height: 1.15; margin-bottom: 22px; color: #F4F7FF; }
+        .step-items { list-style: none; }
+        .step-items li { font-size: 13.5px; color: rgba(255,255,255,0.5); line-height: 1.5; padding: 6px 0; border-top: 1px solid rgba(255,255,255,0.07); }
+        .step-items li:first-child { border-top: none; }
+
+        /* CTA */
+        .cta-section { background: #EEF2FF; text-align: center; }
+        .cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 68px); font-weight: 300; line-height: 1.05; letter-spacing: -0.015em; margin-bottom: 44px; }
+        .cta-section h2 em { font-style: italic; color: var(--accent); }
+        .btn-primary { display: inline-block; background: var(--ink); color: var(--white); padding: 15px 36px; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; transition: background 0.2s; }
+        .btn-primary:hover { background: var(--accent); }
+
+        /* FOOTER */
+        footer { background: var(--ink); color: var(--white); }
+        .footer-top { padding: clamp(64px, 9vw, 104px) 0 64px; display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.2fr; gap: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 36px; }
+        .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; margin-bottom: 18px; }
+        .footer-tagline { font-size: 13.5px; color: rgba(255,255,255,0.35); line-height: 1.72; max-width: 240px; }
+        .footer-col h4 { font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 22px; font-weight: 400; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 13px; }
+        .footer-col ul a { font-size: 13.5px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+        .footer-col ul a:hover { color: var(--white); }
+        .footer-address { font-size: 13.5px; color: rgba(255,255,255,0.4); line-height: 1.75; margin-top: 6px; }
+        .footer-bottom { padding-bottom: 40px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.22); }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .services-list { grid-template-columns: repeat(2, 1fr); }
+            .process-grid { grid-template-columns: repeat(2, 1fr); gap: 0 32px; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 560px) {
+            .services-list { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+            .footer-top { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="at-top">
+    <div class="wrap">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Aristofersólio</a>
+            <ul class="nav-links">
+                <li><a href="we-are.html">We Are</a></li>
+                <li><a href="our-services.html" class="active">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="meet-the-team.html">Team</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+            <a href="contacts.html" class="nav-cta">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section class="hero">
+    <canvas id="dna-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-veil" aria-hidden="true"></div>
+    <div class="wrap" style="position:relative; z-index:1;">
+        <p class="hero-eyebrow">What We Do</p>
+        <h1 class="hero-title">Our <em>Services</em></h1>
+        <p class="hero-lead">From interactive e-detailing to informative videos and visuals, every piece of content we create drives engagement, enhances brand perception, and facilitates knowledge transfer.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <div class="s-label"><span>What We Offer</span></div>
+        <div class="services-list">
+            <div class="svc">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="18" cy="18" r="2.2"/><line x1="7.9" y1="11" x2="16" y2="7"/><line x1="7.9" y1="13" x2="16" y2="17"/></svg></div>
+                <h3>Omnichannel campaign</h3>
+                <p>A kit of creative digital content designed for every one of your stakeholders' touchpoints.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 3 21 8 12 13 3 8z"/><polyline points="3,12 12,17 21,12"/><polyline points="3,16 12,21 21,16"/></svg></div>
+                <h3>Content management</h3>
+                <p>Localization support, data analysis, and clear reporting to keep every market aligned.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 8 12 4 21 8 12 12z"/><path d="M7 10v4c0 1.6 2.4 3 5 3s5-1.4 5-3v-4"/></svg></div>
+                <h3>Training &amp; coaching content</h3>
+                <p>E-learning and serious-gaming modules to train your internal and external users.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><line x1="14" y1="6" x2="18" y2="10"/></svg></div>
+                <h3>Content creation</h3>
+                <p>Strategic, scalable content built to engage complex audiences and accelerate decision-making.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1.5"/><polygon points="10.5,9 15,12 10.5,15"/></svg></div>
+                <h3>Creative promotional material</h3>
+                <p>Interactive, modular CLM tools for your field teams — e-detailing, videos, and emails.</p>
+            </div>
+            <div class="svc">
+                <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 6h10a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H9l-4 3z"/><line x1="7" y1="10" x2="13" y2="10"/></svg></div>
+                <h3>Social media management</h3>
+                <p>End-to-end management combining strategic planning, platform-specific execution, and analytics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section process">
+    <div class="wrap">
+        <div class="s-label"><span>How We Deliver</span></div>
+        <h2 class="process-head">End-to-end digital content creation</h2>
+        <p class="process-sub">From global campaigns to monitoring local operations, our teams support you from A to Z.</p>
+        <div class="process-grid">
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-phase">Design</div>
+                <div class="step-title">Campaign design</div>
+                <ul class="step-items">
+                    <li>Strategic analysis</li>
+                    <li>Customer journeys</li>
+                    <li>Messaging</li>
+                    <li>Artwork</li>
+                </ul>
+            </div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-phase">Build</div>
+                <div class="step-title">Content production</div>
+                <ul class="step-items">
+                    <li>Content mapping</li>
+                    <li>Editing of digital assets</li>
+                    <li>B2B training content</li>
+                    <li>Promotional content</li>
+                </ul>
+            </div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-phase">Launch</div>
+                <div class="step-title">Local adaptation &amp; roll-out</div>
+                <ul class="step-items">
+                    <li>Content management</li>
+                    <li>Content localisation</li>
+                    <li>User training</li>
+                </ul>
+            </div>
+            <div class="step">
+                <div class="step-num">04</div>
+                <div class="step-phase">Analyse</div>
+                <div class="step-title">Data tracking &amp; reporting</div>
+                <ul class="step-items">
+                    <li>Monitoring</li>
+                    <li>Data analysis</li>
+                    <li>Optimisation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section cta-section">
+    <div class="wrap">
+        <h2>Have a project<br>in <em>mind</em>?</h2>
+        <a href="contacts.html" class="btn-primary">Brief Us</a>
+    </div>
+</section>
+
+<footer>
+    <div class="wrap">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">Aristofersólio</div>
+                <p class="footer-tagline">A next-generation digital content agency for Life Science brands. Based in Porto, Portugal.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="we-are.html">We Are</a></li>
+                    <li><a href="our-services.html">Our Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="meet-the-team.html">Meet the Team</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Complaints Book</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:help@aristofersolio.com">help@aristofersolio.com</a></li>
+                    <li><a href="https://www.linkedin.com/company/aristoagency/">LinkedIn</a></li>
+                </ul>
+                <h4 style="margin-top: 32px;">Office</h4>
+                <p class="footer-address">Rua Augusto Rosa, Nº 79<br>Sé 4000-098<br>Porto, Portugal</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Aristofersólio Agency. All rights reserved.</span>
+            <span>Porto, Portugal</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+    var navEl = document.querySelector('nav');
+    var hero = document.querySelector('.hero');
+    function onScroll() {
+        var threshold = (hero ? hero.offsetHeight : window.innerHeight) - 90;
+        if (window.scrollY > threshold) navEl.classList.remove('at-top');
+        else navEl.classList.add('at-top');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+})();
+
+(function () {
+    var canvas = document.getElementById('dna-canvas');
+    var hero = document.querySelector('.hero');
+    if (!canvas || !hero || !window.THREE) return;
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var W = hero.clientWidth, H = hero.clientHeight;
+
+    var scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x05080F, 0.019);
+
+    var camera = new THREE.PerspectiveCamera(50, W / H, 0.1, 300);
+    camera.position.set(0, 7, 17);
+    camera.lookAt(0, 0, -3);
+
+    var renderer;
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true }); }
+    catch (e) { return; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setSize(W, H, false);
+
+    var small = W < 700;
+
+    var dotTex = (function () {
+        var cv = document.createElement('canvas'); cv.width = cv.height = 64;
+        var g = cv.getContext('2d');
+        var grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+        grad.addColorStop(0, 'rgba(255,255,255,1)');
+        grad.addColorStop(0.45, 'rgba(255,255,255,0.9)');
+        grad.addColorStop(1, 'rgba(255,255,255,0)');
+        g.fillStyle = grad; g.beginPath(); g.arc(32, 32, 32, 0, Math.PI * 2); g.fill();
+        return new THREE.CanvasTexture(cv);
+    })();
+
+    var cols = small ? 90 : 150;
+    var rows = small ? 55 : 95;
+    var spanX = 90, spanZ = 64;
+    var dx = spanX / (cols - 1), dz = spanZ / (rows - 1);
+    var count = cols * rows;
+
+    var positions = new Float32Array(count * 3);
+    var baseX = new Float32Array(count);
+    var baseZ = new Float32Array(count);
+    var k = 0;
+    for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < cols; c++) {
+            var x = -spanX / 2 + c * dx;
+            var z = -spanZ / 2 + r * dz;
+            baseX[k] = x; baseZ[k] = z;
+            positions[k * 3] = x; positions[k * 3 + 1] = 0; positions[k * 3 + 2] = z;
+            k++;
+        }
+    }
+
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    var grid = new THREE.Points(geo, new THREE.PointsMaterial({
+        color: 0xaecfff, size: 0.28, map: dotTex, sizeAttenuation: true,
+        transparent: true, opacity: 0.5, blending: THREE.AdditiveBlending, depthWrite: false
+    }));
+    scene.add(grid);
+
+    function waveY(x, z, t) {
+        return 1.15 * Math.sin(0.17 * x + t * 0.9)
+             + 0.9 * Math.cos(0.21 * z + t * 0.7)
+             + 0.55 * Math.sin(0.12 * (x + z) + t * 0.5);
+    }
+
+    var bokN = small ? 28 : 55;
+    var bg = new THREE.BufferGeometry();
+    var bpos = new Float32Array(bokN * 3);
+    for (var b = 0; b < bokN; b++) {
+        bpos[b * 3]     = (Math.random() - 0.5) * 50;
+        bpos[b * 3 + 1] = (Math.random() - 0.2) * 22;
+        bpos[b * 3 + 2] = 6 + Math.random() * 9;
+    }
+    bg.setAttribute('position', new THREE.BufferAttribute(bpos, 3));
+    var bokeh = new THREE.Points(bg, new THREE.PointsMaterial({
+        color: 0xcfe0ff, size: 2.6, map: dotTex, sizeAttenuation: true,
+        transparent: true, opacity: 0.07, blending: THREE.AdditiveBlending, depthWrite: false
+    }));
+    scene.add(bokeh);
+
+    var mx = 0, my = 0, tmx = 0, tmy = 0;
+    if (!reduce) {
+        window.addEventListener('mousemove', function (e) {
+            tmx = (e.clientX / window.innerWidth - 0.5);
+            tmy = (e.clientY / window.innerHeight - 0.5);
+        }, { passive: true });
+    }
+
+    var posAttr = geo.attributes.position;
+    function updateWave(t) {
+        for (var i = 0; i < count; i++) {
+            posAttr.array[i * 3 + 1] = waveY(baseX[i], baseZ[i], t);
+        }
+        posAttr.needsUpdate = true;
+    }
+
+    function render(now) {
+        var t = (now || 0) * 0.00045;
+        if (!reduce) {
+            updateWave(t);
+            bokeh.rotation.y = Math.sin(t * 0.1) * 0.05;
+            mx += (tmx - mx) * 0.04; my += (tmy - my) * 0.04;
+            camera.position.x = mx * 4;
+            camera.position.y = 7 - my * 2.4;
+            camera.lookAt(0, 0, -3);
+        } else { updateWave(0); }
+        renderer.render(scene, camera);
+        if (!reduce) requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+
+    window.addEventListener('resize', function () {
+        W = hero.clientWidth; H = hero.clientHeight;
+        camera.aspect = W / H; camera.updateProjectionMatrix();
+        renderer.setSize(W, H, false);
+    }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
