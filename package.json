@@ -1,0 +1,15 @@
+{
+  "name": "aristo-agency-web",
+  "version": "1.0.0",
+  "description": "Landing page for Aristo, served with Express (Node.js)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
