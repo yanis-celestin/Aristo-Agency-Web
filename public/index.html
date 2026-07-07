@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aristofersólio (Dark) | Life Science Marketing Agency</title>
+    <script>document.documentElement.className += ' js-anim';</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -357,23 +358,70 @@
             position: sticky;
             top: 96px;
         }
+        .service-item { border-bottom: 1px solid var(--border); }
+        .service-item:first-child { border-top: 1px solid var(--border); }
         .service-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 24px;
+            width: 100%;
             padding: 28px 0;
-            border-bottom: 1px solid var(--border);
-            cursor: default;
+            background: none;
+            border: none;
+            font: inherit;
+            color: inherit;
+            text-align: left;
+            cursor: pointer;
             transition: color 0.2s;
         }
-        .service-row:first-child { border-top: 1px solid var(--border); }
         .service-row:hover { color: var(--accent); }
+        .service-item.open .service-row { color: var(--accent); }
         .service-name {
             font-size: clamp(16px, 1.8vw, 21px);
             font-weight: 400;
         }
-        .service-arrow { transition: transform 0.2s; }
+        .service-arrow { transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); flex-shrink: 0; }
         .service-row:hover .service-arrow { transform: translateX(8px); }
+        .service-item.open .service-arrow { transform: rotate(90deg); }
+        /* Collapsing detail panel */
+        .service-detail {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .service-item.open .service-detail { grid-template-rows: 1fr; }
+        .service-detail-inner { overflow: hidden; }
+        .service-detail p {
+            font-size: 14.5px;
+            line-height: 1.75;
+            color: var(--mid);
+            max-width: 62ch;
+            padding-bottom: 30px;
+        }
+
+        /* SECTION SCROLL-REVEAL — mirrors the hero entrance (slide up + deblur) */
+        .js-anim .section,
+        .js-anim footer {
+            opacity: 0;
+            transform: translateY(28px);
+            filter: blur(10px);
+            transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                        filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .js-anim .section.in-view,
+        .js-anim footer.in-view {
+            opacity: 1;
+            transform: none;
+            filter: none;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .js-anim .section,
+            .js-anim footer {
+                opacity: 1; transform: none; filter: none; transition: none;
+            }
+        }
 
         /* CTA */
         .cta-section {
@@ -495,7 +543,6 @@
             </div>
         </div>
     </div>
-    <div class="hero-bg-word" aria-hidden="true">ARISTOFERSÓLIO</div>
 </section>
 
 <section class="section" style="border-top: 1px solid var(--border);">
@@ -551,26 +598,61 @@
                 <div class="s-label"><span>What We Do</span></div>
                 <h2 class="services-heading">Our expertise, your advantage</h2>
             </div>
-            <div>
-                <div class="service-row">
-                    <span class="service-name">Closed Loop Marketing (CLM)</span>
-                    <span class="service-arrow">→</span>
+            <div class="services-accordion">
+                <div class="service-item">
+                    <button class="service-row" type="button" aria-expanded="false">
+                        <span class="service-name">Closed Loop Marketing (CLM)</span>
+                        <span class="service-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <div class="service-detail">
+                        <div class="service-detail-inner">
+                            <p>Placeholder text — describe how Aristofersólio plans and runs Closed Loop Marketing programs, connecting field engagement data back into content that keeps improving over time.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-row">
-                    <span class="service-name">Digital Content Strategy</span>
-                    <span class="service-arrow">→</span>
+                <div class="service-item">
+                    <button class="service-row" type="button" aria-expanded="false">
+                        <span class="service-name">Digital Content Strategy</span>
+                        <span class="service-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <div class="service-detail">
+                        <div class="service-detail-inner">
+                            <p>Placeholder text — outline the strategic frameworks used to map audiences, channels, and messaging into a coherent digital content plan for Life Science brands.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-row">
-                    <span class="service-name">Modular Content Design</span>
-                    <span class="service-arrow">→</span>
+                <div class="service-item">
+                    <button class="service-row" type="button" aria-expanded="false">
+                        <span class="service-name">Modular Content Design</span>
+                        <span class="service-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <div class="service-detail">
+                        <div class="service-detail-inner">
+                            <p>Placeholder text — explain how reusable, approval-ready modules let teams assemble compliant campaigns quickly across markets and formats.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-row">
-                    <span class="service-name">B2B Creative Campaigns</span>
-                    <span class="service-arrow">→</span>
+                <div class="service-item">
+                    <button class="service-row" type="button" aria-expanded="false">
+                        <span class="service-name">B2B Creative Campaigns</span>
+                        <span class="service-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <div class="service-detail">
+                        <div class="service-detail-inner">
+                            <p>Placeholder text — showcase the creative approach to B2B storytelling that builds meaningful connections with healthcare and life science professionals.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="service-row">
-                    <span class="service-name">Data Analytics &amp; Insights</span>
-                    <span class="service-arrow">→</span>
+                <div class="service-item">
+                    <button class="service-row" type="button" aria-expanded="false">
+                        <span class="service-name">Data Analytics &amp; Insights</span>
+                        <span class="service-arrow" aria-hidden="true">→</span>
+                    </button>
+                    <div class="service-detail">
+                        <div class="service-detail-inner">
+                            <p>Placeholder text — describe how engagement and performance data is turned into actionable insights that sharpen every next piece of content.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -637,6 +719,38 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+})();
+
+/* What We Do — expandable accordion */
+(function () {
+    var items = document.querySelectorAll('.service-item');
+    items.forEach(function (item) {
+        var btn = item.querySelector('.service-row');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+            var isOpen = item.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+    });
+})();
+
+/* Reveal each section as it scrolls into view */
+(function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('.section, footer');
+    if (reduce || !('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('in-view'); });
+        return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+            if (e.isIntersecting) {
+                e.target.classList.add('in-view');
+                io.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (el) { io.observe(el); });
 })();
 
 (function () {
