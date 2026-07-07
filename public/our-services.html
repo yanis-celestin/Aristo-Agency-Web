@@ -51,21 +51,20 @@
 
         /* COMPACT HERO */
         .hero {
-            min-height: 66svh; padding-top: 68px; display: grid; align-items: center;
-            padding-bottom: clamp(40px, 6vh, 72px); position: relative; overflow: hidden;
-            background: radial-gradient(120% 110% at 70% 24%, #0E1B33 0%, #070D18 58%, #04070F 100%);
-            color: #F4F7FF;
+            min-height: 82svh; padding-top: 68px; display: grid; align-items: end;
+            padding-bottom: clamp(56px, 9vh, 104px); position: relative; overflow: hidden;
+            background: var(--bg); color: var(--ink);
         }
-        .hero-canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-        .hero-veil {
-            position: absolute; inset: 0; z-index: 0; pointer-events: none;
-            background: linear-gradient(180deg, rgba(4,7,15,0.35) 0%, rgba(4,7,15,0) 24%, rgba(4,7,15,0) 46%, rgba(4,7,15,0.18) 66%, rgba(4,7,15,0.34) 82%, rgba(4,7,15,0.55) 100%);
-        }
-        .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: #7FB2FF; }
+        .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 34px; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
         .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; flex-shrink: 0; }
-        .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 7.5vw, 100px); font-weight: 300; line-height: 0.96; letter-spacing: -0.025em; color: #F4F7FF; margin-bottom: 32px; }
-        .hero-title em { font-style: italic; color: #8FBEFF; }
-        .hero-lead { font-size: clamp(15px, 1.5vw, 18px); line-height: 1.78; color: rgba(244,247,255,0.62); max-width: 600px; }
+        .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 8.5vw, 118px); font-weight: 300; line-height: 0.92; letter-spacing: -0.025em; color: var(--ink); margin-bottom: 48px; }
+        .hero-title em { font-style: italic; color: var(--accent); }
+        .hero-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+        .hero-lead { font-size: clamp(15px, 1.5vw, 18px); line-height: 1.78; color: var(--mid); max-width: 460px; }
+        .hero-actions { display: flex; gap: 20px; align-items: center; flex-shrink: 0; }
+        .btn-ghost { display: inline-block; font-size: 13px; color: var(--mid); padding-bottom: 3px; border-bottom: 1px solid var(--border); transition: color 0.2s, border-color 0.2s; }
+        .btn-ghost:hover { color: var(--ink); border-color: var(--ink); }
+        .hero-bg-word { position: absolute; bottom: -0.1em; right: -0.03em; font-family: 'Cormorant Garamond', serif; font-size: clamp(80px, 17vw, 260px); font-weight: 300; letter-spacing: -0.03em; color: transparent; -webkit-text-stroke: 1px var(--border); pointer-events: none; user-select: none; white-space: nowrap; line-height: 1; z-index: 0; }
 
         /* SECTION + LABEL */
         .section { padding: var(--pad) 0; }
@@ -135,7 +134,7 @@
 </head>
 <body>
 
-<nav class="at-top">
+<nav>
     <div class="wrap">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">Aristofersólio</a>
@@ -152,12 +151,17 @@
 </nav>
 
 <section class="hero">
-    <canvas id="dna-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-    <div class="hero-veil" aria-hidden="true"></div>
+    <div class="hero-bg-word" aria-hidden="true">Aristofersólio</div>
     <div class="wrap" style="position:relative; z-index:1;">
-        <p class="hero-eyebrow">What We Do</p>
-        <h1 class="hero-title">Our <em>Services</em></h1>
-        <p class="hero-lead">From interactive e-detailing to informative videos and visuals, every piece of content we create drives engagement, enhances brand perception, and facilitates knowledge transfer.</p>
+        <p class="hero-eyebrow">What We Do — Porto, Portugal</p>
+        <h1 class="hero-title">Content that <em>engages</em><br>and informs</h1>
+        <div class="hero-row">
+            <p class="hero-lead">From interactive e-detailing to informative videos and visuals, every piece of content we create drives engagement, enhances brand perception, and facilitates knowledge transfer.</p>
+            <div class="hero-actions">
+                <a href="contacts.html" class="btn-primary">Brief Us</a>
+                <a href="projects.html" class="btn-ghost">View Projects</a>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -300,20 +304,7 @@
     </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-(function () {
-    var navEl = document.querySelector('nav');
-    var hero = document.querySelector('.hero');
-    function onScroll() {
-        var threshold = (hero ? hero.offsetHeight : window.innerHeight) - 90;
-        if (window.scrollY > threshold) navEl.classList.remove('at-top');
-        else navEl.classList.add('at-top');
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-})();
-
 (function () {
     var canvas = document.getElementById('dna-canvas');
     var hero = document.querySelector('.hero');
