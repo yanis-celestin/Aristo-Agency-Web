@@ -17,11 +17,9 @@ const publicDir = path.join(__dirname, 'public');
 // for "/our-services" will also find "our-services.html".
 app.use(express.static(publicDir, { extensions: ['html'] }));
 
-// If nothing matched above, show a friendly 404.
+// If nothing matched above, serve the styled 404 page.
 app.use((req, res) => {
-  res.status(404).send(
-    '<h1>404 — Page not found</h1><p><a href="/">Back to home</a></p>'
-  );
+  res.status(404).sendFile(path.join(publicDir, '404.html'));
 });
 
 app.listen(PORT, () => {
