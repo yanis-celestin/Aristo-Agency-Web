@@ -1,0 +1,20 @@
+/*
+  Site-wide font override.
+  The client is trialling a single typeface across the whole site. This keeps
+  every existing size, weight, letter-spacing and line-height exactly as
+  designed and only swaps the typeface (both the Cormorant Garamond headings
+  and the DM Sans body use the font below).
+
+  Current trial font: INTER
+  ─────────────────────────────────────────────────────────────────────────────
+  TO TRY A DIFFERENT FONT: change the @import URL and the font-family name below.
+  TO REVERT to the original Cormorant Garamond + DM Sans typography: delete
+  everything in this file (leave it empty). The original design returns instantly
+  on every page — no other files need to change.
+  ─────────────────────────────────────────────────────────────────────────────
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif !important;
+}
