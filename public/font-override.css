@@ -18,3 +18,8 @@
 * {
   font-family: 'Inter', sans-serif !important;
 }
+
+/* Inter is wider than the original Cormorant serif, so the large display
+   headings wrapped onto an extra line. Trim the biggest sizes so they keep
+   their intended line breaks. (Part of the font trial — reverts with this file.) */
+.hero-title { font-size: clamp(44px, 6.6vw, 98px) !important; }
