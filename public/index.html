@@ -295,9 +295,19 @@
             border: 1px solid var(--border);
             color: var(--mid);
         }
-        .tag-lead {
-            border-color: var(--accent);
-            color: var(--accent);
+
+        /* WORLDWIDE STATEMENT */
+        .statement { text-align: center; }
+        .statement-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(34px, 5vw, 68px);
+            font-weight: 300; line-height: 1.05; letter-spacing: -0.015em;
+            margin-bottom: 30px;
+        }
+        .statement-heading em { font-style: italic; color: var(--accent); }
+        .statement-body {
+            font-size: clamp(16px, 1.6vw, 19px); line-height: 1.75;
+            color: var(--mid); max-width: 640px; margin: 0 auto;
         }
 
         /* ETYMOLOGY */
@@ -541,7 +551,7 @@
         <p class="hero-eyebrow">Life Science Marketing Agency</p>
         <h1 class="hero-title"><span class="hl">Crafting digital content</span><span class="hl">for the <em>omnichannel</em> age</span></h1>
         <div class="hero-row">
-            <p class="hero-sub">We help worldwide Life Science brands to create engaging digital experiences. Expert and agile, we specialize in crafting B2B content that builds meaningful connections with professionals.</p>
+            <p class="hero-sub">We help worldwide Life Science brands create engaging digital experiences — B2B content that builds meaningful connections with professionals.</p>
             <div class="hero-actions">
                 <a href="#" class="btn-primary">Our Services</a>
                 <a href="#" class="btn-ghost">View Projects</a>
@@ -561,7 +571,6 @@
                 <p>As a digital and creative agency, we blend design, agile methodologies, and deep expertise in life science. Guided by insights, we believe that precise, impactful content arises from a true understanding of today's — and tomorrow's — professionals.</p>
                 <p>With a strong background in Closed Loop Marketing (CLM), we transform medical information into compelling narratives and modular content, fostering meaningful interactions with healthcare and life science professionals worldwide.</p>
                 <div class="about-tags">
-                    <span class="tag tag-lead">Worldwide Next-Gen Digital Content Agency</span>
                     <span class="tag">Closed Loop Marketing</span>
                     <span class="tag">Modular Content</span>
                     <span class="tag">Omnichannel</span>
@@ -570,6 +579,13 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="section statement" style="border-top: 1px solid var(--border);">
+    <div class="wrap">
+        <h2 class="statement-heading">Worldwide <em>Next-Gen</em> Digital Content Agency</h2>
+        <p class="statement-body">We help worldwide Life Science brands to create engaging digital experiences. Expert and agile, we specialize in crafting B2B content that builds meaningful connections with professionals.</p>
     </div>
 </section>
 
