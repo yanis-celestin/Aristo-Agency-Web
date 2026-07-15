@@ -1,13 +1,27 @@
 /*
-  Font override — currently INACTIVE.
-  The site is using its original typography: Cormorant Garamond (headings)
-  + DM Sans (body).
+  Site-wide font override.
+  The client is trialling a single typeface across the whole site. This keeps
+  every existing size, weight, letter-spacing and line-height exactly as
+  designed and only swaps the typeface (both the Cormorant Garamond headings
+  and the DM Sans body use the font below).
 
-  To trial a different font across the whole site again, add:
-
-    @import url('<google-fonts-url-for-the-font>');
-    * { font-family: '<Font Name>', sans-serif !important; }
-
-  (and any size fine-tunes, e.g. .hero-title { font-size: ... !important; }).
-  Leaving this file empty keeps the original design.
+  Current trial font: RALEWAY
+  ─────────────────────────────────────────────────────────────────────────────
+  TO TRY A DIFFERENT FONT: change the @import URL and the font-family name below.
+  TO REVERT to the original Cormorant Garamond + DM Sans typography: delete
+  everything in this file (leave it empty). The original design returns instantly
+  on every page — no other files need to change.
+  ─────────────────────────────────────────────────────────────────────────────
 */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
+* {
+  font-family: 'Raleway', sans-serif !important;
+}
+
+/* Raleway runs a touch wider than Cormorant at display sizes, so the large
+   hero headline wraps an extra line. Trim it slightly to keep the original
+   line breaks. Remove this rule if you revert the font. */
+.hero-title {
+  font-size: clamp(44px, 7vw, 100px) !important;
+}
