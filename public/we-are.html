@@ -104,6 +104,16 @@
             color: var(--ink); margin-bottom: 34px;
         }
         .hero-title em { font-style: italic; color: var(--accent); }
+        /* Brand wordmark replacing the "Aristofersólio" word in the title */
+        .title-logo {
+            display: inline-block;
+            height: 0.72em;
+            width: calc(0.72em * 6.757); /* logo aspect ratio 1000:148 */
+            vertical-align: -0.06em;
+            background-color: var(--accent);
+            -webkit-mask: url('/logo.svg') no-repeat center / contain;
+            mask: url('/logo.svg') no-repeat center / contain;
+        }
         .hero-lead {
             font-size: clamp(15px, 1.4vw, 17px); line-height: 1.8;
             color: var(--mid); max-width: 460px;
@@ -268,7 +278,7 @@
     <div class="wrap hero-inner">
         <div class="hero-copy">
             <p class="hero-eyebrow">Who We Are</p>
-            <h1 class="hero-title">We are <em>Aristofersólio</em></h1>
+            <h1 class="hero-title">We are <span class="title-logo" role="img" aria-label="Aristofersólio"></span></h1>
             <p class="hero-lead">An innovative team of marketers, creatives, content managers, and data analysts — committed to creating engaging content for the people who move life science forward.</p>
         </div>
         <div class="hero-disciplines" aria-label="Our disciplines">
