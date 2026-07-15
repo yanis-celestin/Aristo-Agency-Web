@@ -27,3 +27,8 @@
   font-weight: 500 !important;      /* Raleway Medium */
   letter-spacing: -0.02em !important; /* -2% tracking */
 }
+
+/* "We are Aristofersólio" section heading — Regular reads better than Light here */
+.about-heading {
+  font-weight: 400 !important;
+}
