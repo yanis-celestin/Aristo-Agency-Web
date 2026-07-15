@@ -26,7 +26,9 @@
   font-size: clamp(44px, 7vw, 100px) !important;
 }
 
-/* "We are Aristofersólio" section heading — Regular reads better than Light here */
+/* "We are Aristofersólio" section heading — Regular reads better than Light here.
+   Raleway sets much wider than Cormorant, so trim the size to keep it compact. */
 .about-heading {
   font-weight: 400 !important;
+  font-size: clamp(26px, 3.1vw, 42px) !important;
 }
