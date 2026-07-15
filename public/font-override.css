@@ -24,8 +24,6 @@
    line breaks. Remove this rule if you revert the font. */
 .hero-title {
   font-size: clamp(44px, 7vw, 100px) !important;
-  font-weight: 500 !important;      /* Raleway Medium */
-  letter-spacing: -0.02em !important; /* -2% tracking */
 }
 
 /* "We are Aristofersólio" section heading — Regular reads better than Light here */
