@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use — Aristofersólio | Life Science Marketing Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/font-override.css">
+    <style>
+        :root {
+            --bg: #F9F9F8; --ink: #0F1923; --accent: #1440D0;
+            --mid: #5C6980; --border: #E0E5EE; --white: #FFFFFF;
+            --gutter: clamp(24px, 5vw, 80px);
+            --max: 1240px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', sans-serif; font-weight: 300;
+            background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; text-decoration: none; }
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+        /* NAV */
+        nav {
+            position: fixed; inset: 0 0 auto; z-index: 100;
+            background: rgba(249, 249, 248, 0.90);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .nav-logo {
+            display: inline-block; width: 149px; height: 22px;
+            text-indent: -9999px; overflow: hidden; white-space: nowrap;
+            background-color: currentColor;
+            -webkit-mask: url('/logo.svg') no-repeat center / contain;
+            mask: url('/logo.svg') no-repeat center / contain;
+        }
+        .nav-links { display: flex; gap: 36px; list-style: none; }
+        .nav-links a { font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--mid); transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+        .nav-cta { display: inline-block; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--ink); padding: 11px 28px; transition: background 0.2s, color 0.2s; }
+        .nav-cta:hover { background: var(--ink); color: var(--white); }
+
+        /* LEGAL PAGE */
+        .legal { padding: calc(68px + clamp(56px, 8vw, 104px)) 0 clamp(80px, 10vw, 130px); }
+        .legal-wrap { max-width: 820px; }
+        .legal-eyebrow {
+            display: flex; align-items: center; gap: 14px; margin-bottom: 26px;
+            font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 500;
+        }
+        .legal-eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; }
+        .legal-title {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 6vw, 74px);
+            font-weight: 300; line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 40px;
+        }
+        .legal-intro { font-size: 16px; line-height: 1.8; color: var(--mid); margin-bottom: 8px; }
+        .legal-body h2 {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2.6vw, 30px);
+            font-weight: 400; letter-spacing: -0.01em; line-height: 1.2;
+            margin: 44px 0 16px; color: var(--ink);
+        }
+        .legal-body p { font-size: 15px; line-height: 1.82; color: var(--mid); margin-bottom: 18px; }
+        .legal-body ul { list-style: disc; margin: 0 0 18px; padding-left: 22px; }
+        .legal-body li { font-size: 15px; line-height: 1.75; color: var(--mid); margin-bottom: 10px; }
+        .legal-body strong { color: var(--ink); font-weight: 500; }
+        .legal-body .caps { text-transform: none; }
+        .legal-note {
+            margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--border);
+            font-size: 13.5px; line-height: 1.7; color: var(--mid); font-style: italic;
+        }
+
+        /* FOOTER */
+        footer { background: var(--ink); color: var(--white); margin-top: 40px; }
+        .footer-top { padding: clamp(64px, 9vw, 104px) 0 64px; display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.2fr; gap: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 36px; }
+        .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; margin-bottom: 18px; }
+        .footer-tagline { font-size: 13.5px; color: rgba(255,255,255,0.35); line-height: 1.72; max-width: 240px; }
+        .footer-col h4 { font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 22px; font-weight: 400; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 13px; }
+        .footer-col ul a { font-size: 13.5px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+        .footer-col ul a:hover { color: var(--white); }
+        .footer-address { font-size: 13.5px; color: rgba(255,255,255,0.4); line-height: 1.75; margin-top: 6px; }
+        .footer-bottom { padding-bottom: 40px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.22); }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 560px) {
+            .footer-top { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="wrap">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Aristofersólio</a>
+            <ul class="nav-links">
+                <li><a href="we-are.html">We Are</a></li>
+                <li><a href="our-services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="meet-the-team.html">Team</a></li>
+            </ul>
+            <a href="contacts.html" class="nav-cta">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section class="legal">
+    <div class="wrap legal-wrap">
+        <p class="legal-eyebrow">Legal</p>
+        <h1 class="legal-title">Terms of Use</h1>
+        <div class="legal-body">
+            <h2>I — Acceptance of the terms of use</h2>
+            <p>These Terms of Use are entered into between you and Aristofersólio - Lda; the following terms and conditions, together with any documents they expressly incorporate by reference (collectively, these "Terms of Use"), govern your access to and use of Aristoagency.com, including any content, functionality, and services offered on or through any other website, desktop application or mobile application (individually and collectively, the "Website"), as a user.</p>
+            <p>Please read the Terms of Use carefully before you begin using the Website. By using the Website and clicking to accept the Terms of Use when this option is made available to you, you accept and agree to be bound by and comply with these Terms of Use and our Privacy, Security, and Cookie Notice incorporated herein. By reference, if you do not wish to accept these terms of use or the privacy, security, and cookie notices, you should not access or use the Website.</p>
+            <p>This Website is offered and available to users 18 years of age or older. By using this Website, you represent and warrant that you are of legal age to enter into a binding contract with the Company and meet all of the above eligibility requirements. If you do not meet all of these conditions, you must not access or use the Website.</p>
+
+            <h2>II — Changes to the terms of use</h2>
+            <p>These terms of use may be amended or supplemented from time to time at our sole discretion. All changes are effective immediately upon posting and apply to all access and use of the Website after that. However, any changes to the dispute resolution provisions of the applicable law and jurisdiction will not apply to disputes for which the parties have been notified on or before the date the change is posted on the Website.</p>
+            <p>Therefore, users of the Website are encouraged to review them regularly, as your continued use of the Website following the posting of the revised Terms of Use will mean that you accept the changes.</p>
+
+            <h2>III — Access to the website</h2>
+            <p>This Website is usually available to users at all times. However, We reserve the right to withdraw or amend this Website, and any of the services or materials we provide on the Website, at our sole discretion, and without notice.</p>
+            <p>In addition, we will not be liable if, for any reason, all or any part of the Website is unavailable at any time or for any period. In particular, in the event of maintenance or upgrading by the "owner."</p>
+            <p>From time to time, we may restrict access to parts of the Website, or the entire Website, to users.</p>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Making all arrangements for you to have access to the Website.</li>
+                <li>Ensuring that all persons accessing the Website through your Internet connection are aware of these terms of use and comply with them.</li>
+            </ul>
+
+            <h2>IV — Content available via the website</h2>
+            <p>You acknowledge that Aristofersólio - Lda, makes no representations or warranties regarding any material, data, or information, such as data files, text, code, audio or other sound files, photographs, videos, or other images (collectively, the "Content" that you may access as part of, or through your use of, the Website).</p>
+            <p>In no event shall Aristofersólio - Lda, be liable in any way for any Content, including: any infringing Content, any errors or omissions in the Content, or any loss or damage of any kind incurred as a result of the use of any Content posted on, transmitted to, linked from, or otherwise accessible via or made available through the Website.</p>
+            <p>You agree that you are solely responsible for your reuse of Content made available through the Website, including providing proper attribution.</p>
+            <p>You should consult the terms of the Creative Commons license we apply for before using the Content to see what you can and cannot do.</p>
+            <p>License: Attribution CC BY: This license allows you to distribute, remix, adapt, and build upon our work, even for commercial purposes, provided you attribute the original creation to us. This is the most flexible of the proposed licenses. It is recommended for maximum distribution and use of the licensed material.</p>
+
+            <h2>V — Prohibited conduct and use</h2>
+            <p>You may only use the website for lawful purposes and in accordance with these terms of use.</p>
+            <p>You agree not to use the website:</p>
+            <ul>
+                <li>In a manner that (I) violates any applicable local, state, national or international law or regulation or uses the Site for any illegal purpose, (II) violates or encourages others to violate any rights or obligations to any third party, including by infringing, misappropriating or violating intellectual property, confidentiality or privacy rights.</li>
+                <li>To exploit, harm, or attempt to exploit or harm minors in any way by exposing them to inappropriate content, soliciting personally identifiable information, or otherwise.</li>
+                <li>To send, knowingly receive, upload, use or reuse any material that does not comply with the content standards set out in these terms of use.</li>
+                <li>To transmit any advertising or promotional materials, including junk mail, spam, chain letters, pyramid schemes, or any other form of unsolicited or unwelcome solicitation.</li>
+                <li>To impersonate or attempt to impersonate the Company, a Company employee, a user, or any other person or entity (including, without limitation, by using e-mail addresses associated with any of the preceding). You may not attempt to gain unauthorized access to the Services or computer systems or networks connected to the Services by hacking, password mining, or any other means.</li>
+                <li>Engage in any other conduct that restricts or inhibits any other person's use or enjoyment of the Website, or that, in our determination, may harm the Company or users of the Website or expose them to liability.</li>
+            </ul>
+            <p>In addition, you agree not to:</p>
+            <ul>
+                <li>Use the Website in any manner that could disable, overburden, damage, or impair the Website or interfere with any other party's use of the Website, including its ability to engage in real-time activities through the Website.</li>
+                <li>Use any robot, spider, or other automatic devices, process, or means to access the Website for any purpose, including monitoring or copying any material on the Website.</li>
+                <li>Use any manual process to monitor or copy any material on the Website or for any other unauthorized purpose without our prior written consent.</li>
+                <li>Use any device, software, or routine that interferes with the proper functioning of the Website.</li>
+                <li>Introduce viruses, Trojan horses, worms, logic bombs, or any other malicious or technologically harmful material.</li>
+                <li>Attempt to gain unauthorized access to, interfere with, damage or disrupt any part of the Website, the server on which the Website is stored, or any server, computer, or database connected to the Website.</li>
+                <li>Otherwise, attempt to interfere with the proper working of the Website.</li>
+                <li>Although we maintain appropriate safeguards to protect your data, we may prosecute any party who unlawfully attempts to extract data from members of this site.</li>
+            </ul>
+
+            <h2>VI — Linking to the Website and Social Media Features</h2>
+            <p>You are permitted to link to our home page, provided that you do so fairly and legally. It does not damage or take advantage of our reputation or suggests any form of false association or endorsement on our part.</p>
+            <p>This website may provide certain social media features that allow you to:</p>
+            <ul>
+                <li>Link from your own website or certain third-party websites to certain content on this website.</li>
+                <li>Send emails or other communications with certain content, or links to specific content, on this website.</li>
+            </ul>
+            <p>You may only use such features as provided by us solely in respect of the content with which they are displayed and otherwise in accordance with the additional terms and conditions we provide in respect of such features.</p>
+            <p>Subject to the preceding, you shall not:</p>
+            <ul>
+                <li>Link to any website that you do not own.</li>
+                <li>Cause the Website or any part of it to be displayed, or to appear to be displayed, for example, by framing, deep linking, or inline linking, on any other site.</li>
+                <li>Otherwise, take any action concerning the materials on this Website that is inconsistent with any other provision of these Terms of Use.</li>
+            </ul>
+            <p>The website from which you link, or on which you make certain content available, must comply in all respects with the content standards set out in these Terms of Use.</p>
+            <p>You agree to cooperate with us to terminate any unauthorized framing or linking immediately. We reserve the right to withdraw linking permission without notice.</p>
+            <p>We may disable any or all social media features and links at any time without notice at our sole discretion.</p>
+
+            <h2>VII — Links from the Website</h2>
+            <p>If the website contains links to other sites and resources provided by third parties, these links are provided solely for your convenience. This includes links contained in advertisements, including banner ads and sponsored links. We have no control over the content of these sites or resources, and accept no responsibility for them or for any loss or damage that may arise from your use of them. If you decide to access any of the third-party websites linked to this website, you do so entirely at your own risk and subject to the terms of use of those websites.</p>
+
+            <h2>VIII — Disclaimer of warranties</h2>
+            <p>You understand that we cannot and do not guarantee or warrant that files available for downloading from the Internet or the website will be free of viruses or other destructive code.</p>
+            <p>You are responsible for implementing sufficient procedures and controls to satisfy your particular requirements for virus protection and accuracy of input and output data and for maintaining a means external to our site for any recovery of lost data.</p>
+            <p>Thus:</p>
+            <p>WE WILL NOT BE LIABLE FOR ANY LOSS OR DAMAGE CAUSED BY A DISTRIBUTED DENIAL-OF-SERVICE ATTACK, VIRUSES, OR OTHER TECHNOLOGICALLY HARMFUL MATERIAL THAT MAY INFECT YOUR COMPUTER EQUIPMENT, COMPUTER PROGRAMS, DATA, OR OTHER PROPRIETARY MATERIAL DUE TO YOUR USE OF THE WEBSITE OR ANY SERVICE OR MATERIAL OBTAINED THROUGH THE WEBSITE OR TO YOUR DOWNLOADING OF ANY MATERIAL POSTED ON THE WEBSITE.</p>
+            <p>YOUR USE OF THE WEBSITE, ITS CONTENT, AND ANY SERVICES OR MATERIALS OBTAINED THROUGH THE WEBSITE IS AT YOUR OWN RISK. THE WEBSITE, ITS CONTENTS, AND ANY SERVICES OR MATERIALS OBTAINED THROUGH THE WEBSITE ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED. NEITHER ARISTOFERSÓLIO - LDA, OR ANY PERSON ASSOCIATED WITH ARISTOFERSÓLIO - LDA, MAKES ANY WARRANTY OR REPRESENTATION AS TO THE COMPLETENESS, SECURITY, RELIABILITY, QUALITY, AND ACCURACY, OR AVAILABILITY OF THE WEBSITE. WITHOUT LIMITING THE PRECEDING, NEITHER ARISTOFERSÓLIO - LDA, NOR ANYONE ASSOCIATED WITH ARISTOFERSÓLIO - LDA, REPRESENTS OR WARRANTS THAT THE WEBSITE, ITS CONTENTS, OR ANY SERVICES OR MATERIALS OBTAINED THROUGH THE WEBSITE WILL BE ACCURATE, RELIABLE, ERROR-FREE, OR UNINTERRUPTED, OR THAT DEFECTS WILL BE CORRECTED.</p>
+            <p>ARISTOFERSÓLIO - LDA, HEREBY DISCLAIMS ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT, AND FITNESS FOR A PARTICULAR PURPOSE.</p>
+            <p>THE PRECEDING DOES NOT AFFECT ANY WARRANTY THAT MAY NOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.</p>
+
+            <h2>IX — Limitation on liability</h2>
+            <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL ARISTOFERSÓLIO - LDA, ITS AFFILIATES OR THEIR LICENSORS, SERVICE PROVIDERS, EMPLOYEES, AGENTS, OFFICERS, OR DIRECTORS BE LIABLE FOR DAMAGES OF ANY KIND UNDER ANY LEGAL THEORY ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF OR INABILITY TO USE THE WEBSITE, ANY WEBSITE LINKED TO THE WEBSITE, ANY CONTENT ON THE WEBSITE OR SUCH OTHER WEBSITES, OR ANY SERVICES OR ITEMS OBTAINED THROUGH THE WEBSITE OR SUCH OTHER WEBSITES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO PERSONAL INJURY, PAIN AND SUFFERING, EMOTIONAL DISTRESS, LOSS OF REVENUE, LOSS OF PROFITS, LOSS OF BUSINESS OR ANTICIPATED SAVINGS, LOSS OF USE, LOSS OF GOODWILL, LOSS OF DATA AND WHETHER CAUSED BY TORT (INCLUDING NEGLIGENCE), BREACH OF CONTRACT OR OTHERWISE, EVEN IF FORESEEABLE.</p>
+            <p>THE PRECEDING DOES NOT AFFECT ANY LIABILITY WHICH MAY NOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW.</p>
+
+            <h2>X — Indemnification</h2>
+            <p>You agree to defend, indemnify and hold harmless Aristofersólio - Lda, its affiliates, licensors, and service providers, and their respective officers, directors, employees, contractors, agents, licensors, suppliers, successors, and assigns from and against any and all claims, liabilities, damages, judgments, awards, losses, costs expenses or fees (including reasonable attorneys' fees) arising out of or relating to your breach of these Terms of Use or your use of the Website, including, but not limited to, your User Contributions, any use of the Website's content, services and products other than as expressly authorized in these Terms of Use or your use of any information obtained from the Website.</p>
+
+            <h2>XI — Privacy Policy</h2>
+            <p>Aristofersólio - Lda is committed to handling responsibly the information and data we collect through our Services in accordance with our Privacy Policy, which is incorporated by reference into these Terms and Conditions. Please review the Privacy Policy to learn how we collect and use your personal information.</p>
+
+            <h2>XII — Termination</h2>
+            <p>By Aristofersólio - Lda: Aristofersólio - Lda may modify, suspend or terminate the operation of or access to all or part of the Services at any time and for any reason.</p>
+            <p>By you: If you wish to terminate this agreement, you may immediately cease accessing or using the Services at any time.</p>
+            <p>Automatic upon breach: Your right to access and use the Services will be automatically terminated if you breach any terms. To avoid doubt, termination of the Terms does not require you to remove or delete any previously applied website reference from your own Content.</p>
+            <p>Survival: The disclaimer of warranties, limitation of liability, jurisdiction, and applicable statutory provisions shall survive any termination. Your warranties and indemnification obligations shall survive for one year after termination.</p>
+
+            <h2>XIII — Miscellaneous conditions</h2>
+            <p>Choice of Law: The Terms shall be governed by and construed in accordance with the laws in force in France, excluding its choice of law rules.</p>
+            <p>Dispute Resolution: The parties agree that any dispute between Aristofersólio - Lda, and you regarding these Terms and/or any of the Services may only be brought before a competent French court sitting in Marseille, and you hereby consent to the personal jurisdiction and venue of such court.</p>
+            <p>No Waiver: The failure of either party to insist upon or enforce strict performance of any of the Terms shall not be construed as a waiver of any provision or right.</p>
+            <p>Severability: If any part of the Terms is held to be invalid or unenforceable by any law, regulation, or final decision of a court or tribunal of competent jurisdiction, that provision shall be deemed severable and shall not affect the validity and enforceability of any remaining provisions.</p>
+            <p>Integration: These Terms and Conditions and any applicable Additional Terms constitute the entire agreement between you and Aristofersólio - Lda, concerning the "Website" and supersede all prior communications and/or agreements between you and Aristofersólio - Lda, concerning access and use of the Services and the "Website."</p>
+
+            <p class="legal-note">Note regarding the reuse of these terms of use. The Aristofersólio - Lda, Terms of Use are dedicated to the public domain under the Creative Commons CC0 Public Domain Dedication. You are free to use and adapt these Terms and Conditions and any applicable Additional Terms for your own purposes. However, please remember that these Terms may not be entirely appropriate to your situation. Aristofersólio - Lda strongly encourages you to seek the advice of your own attorney before reusing these Terms on your own site.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="wrap">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">Aristofersólio</div>
+                <p class="footer-tagline">A next-generation digital content agency for Life Science brands. Based in Porto, Portugal.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="we-are.html">We Are</a></li>
+                    <li><a href="our-services.html">Our Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="meet-the-team.html">Meet the Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener">Complaints Book</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:help@aristofersolio.com">help@aristofersolio.com</a></li>
+                    <li><a href="https://www.linkedin.com/company/aristoagency/">LinkedIn</a></li>
+                </ul>
+                <h4 style="margin-top: 32px;">Office</h4>
+                <p class="footer-address">Rua Augusto Rosa, Nº 79<br>Sé 4000-098<br>Porto, Portugal</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Aristofersólio Agency. All rights reserved.</span>
+            <span>Porto, Portugal</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

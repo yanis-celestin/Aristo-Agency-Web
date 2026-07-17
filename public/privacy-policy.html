@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Aristofersólio | Life Science Marketing Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/font-override.css">
+    <style>
+        :root {
+            --bg: #F9F9F8; --ink: #0F1923; --accent: #1440D0;
+            --mid: #5C6980; --border: #E0E5EE; --white: #FFFFFF;
+            --gutter: clamp(24px, 5vw, 80px);
+            --max: 1240px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'DM Sans', sans-serif; font-weight: 300;
+            background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased;
+        }
+        a { color: inherit; text-decoration: none; }
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+        /* NAV */
+        nav {
+            position: fixed; inset: 0 0 auto; z-index: 100;
+            background: rgba(249, 249, 248, 0.90);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .nav-logo {
+            display: inline-block; width: 149px; height: 22px;
+            text-indent: -9999px; overflow: hidden; white-space: nowrap;
+            background-color: currentColor;
+            -webkit-mask: url('/logo.svg') no-repeat center / contain;
+            mask: url('/logo.svg') no-repeat center / contain;
+        }
+        .nav-links { display: flex; gap: 36px; list-style: none; }
+        .nav-links a { font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--mid); transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+        .nav-cta { display: inline-block; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--ink); padding: 11px 28px; transition: background 0.2s, color 0.2s; }
+        .nav-cta:hover { background: var(--ink); color: var(--white); }
+
+        /* LEGAL PAGE */
+        .legal { padding: calc(68px + clamp(56px, 8vw, 104px)) 0 clamp(80px, 10vw, 130px); }
+        .legal-wrap { max-width: 820px; }
+        .legal-eyebrow {
+            display: flex; align-items: center; gap: 14px; margin-bottom: 26px;
+            font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 500;
+        }
+        .legal-eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; }
+        .legal-title {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 6vw, 74px);
+            font-weight: 300; line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 14px;
+        }
+        .legal-updated { font-size: 13px; color: var(--mid); margin-bottom: 40px; }
+        .legal-body h2 {
+            font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2.6vw, 30px);
+            font-weight: 400; letter-spacing: -0.01em; line-height: 1.2;
+            margin: 44px 0 16px; color: var(--ink);
+        }
+        .legal-body p { font-size: 15px; line-height: 1.82; color: var(--mid); margin-bottom: 18px; }
+        .legal-body ul { list-style: disc; margin: 0 0 18px; padding-left: 22px; }
+        .legal-body li { font-size: 15px; line-height: 1.75; color: var(--mid); margin-bottom: 10px; }
+        .legal-body strong { color: var(--ink); font-weight: 500; }
+        .legal-body .plain-list { list-style: none; padding-left: 0; }
+        .legal-body .plain-list li { margin-bottom: 6px; }
+
+        /* FOOTER */
+        footer { background: var(--ink); color: var(--white); margin-top: 40px; }
+        .footer-top { padding: clamp(64px, 9vw, 104px) 0 64px; display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.2fr; gap: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 36px; }
+        .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; margin-bottom: 18px; }
+        .footer-tagline { font-size: 13.5px; color: rgba(255,255,255,0.35); line-height: 1.72; max-width: 240px; }
+        .footer-col h4 { font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 22px; font-weight: 400; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 13px; }
+        .footer-col ul a { font-size: 13.5px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+        .footer-col ul a:hover { color: var(--white); }
+        .footer-address { font-size: 13.5px; color: rgba(255,255,255,0.4); line-height: 1.75; margin-top: 6px; }
+        .footer-bottom { padding-bottom: 40px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.22); }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 560px) {
+            .footer-top { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="wrap">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Aristofersólio</a>
+            <ul class="nav-links">
+                <li><a href="we-are.html">We Are</a></li>
+                <li><a href="our-services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="meet-the-team.html">Team</a></li>
+            </ul>
+            <a href="contacts.html" class="nav-cta">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section class="legal">
+    <div class="wrap legal-wrap">
+        <p class="legal-eyebrow">Legal</p>
+        <h1 class="legal-title">Privacy Policy</h1>
+        <p class="legal-updated">Last updated 11 April 2022</p>
+        <div class="legal-body">
+            <p><strong>Privacy Notice</strong></p>
+            <p>Aristofersólio - Lda. Respect your privacy and are committed to protecting your personal data. Please see our full privacy policy below.</p>
+            <p>Before using or submitting information via or connected with the website, please read this Privacy Policy carefully. By using any part of the website, you understand that your information will be collected, used, and disclosed as described in this Privacy Policy. IF YOU DO NOT AGREE TO THIS PRIVACY POLICY, PLEASE DO NOT USE THE WEBSITE.</p>
+
+            <h2>I — Our Principles</h2>
+            <p>Aristofersólio - Lda have designed this policy in accordance with the following principles:</p>
+            <ul>
+                <li>Privacy policies should be human-readable and easy to find.</li>
+                <li>Data collection, storage, and processing should be simplified as much as possible to enhance security, ensure consistency, and make practices easy for users to understand.</li>
+                <li>Data practices should meet the reasonable expectations of users.</li>
+            </ul>
+
+            <h2>II — Objectives of this privacy policy</h2>
+            <p>This privacy policy aims to provide you with information about how Aristofersólio - Lda collects and processes your personal data when you use this website, including data you may provide via this website when you sign up for our newsletter or fill in a form.</p>
+            <p>This website is not intended for children, and we do not knowingly collect data relating to children.</p>
+            <p>You must read this privacy policy together with our terms of use and any other privacy notices or fair processing notices we may provide on specific occasions when we collect or process personal data about you to know how and why we use your data entirely. This privacy policy supplements the other notices and is not intended to replace them.</p>
+
+            <h2>III — Controller</h2>
+            <p>Aristofersólio - Lda is the controller and custodian of your personal data (collectively referred to as "COMPANY," "we" "us", or "our" in this Privacy Policy).</p>
+            <p>We have also appointed ourselves to oversee matters relating to this Privacy Policy. If you have any questions about this Privacy Policy, including any requests to exercise your legal rights, please get in touch with us using the contact information provided below:</p>
+            <p>contact@aristoagency.com</p>
+
+            <h2>IV — Changes to the privacy policy and your duty to inform us of changes</h2>
+            <p>This version was last updated on 11 April 2022, and historic versions can be obtained by contacting us.</p>
+            <p>The personal data we hold about you must be accurate and up-to-date. Please keep us informed if your personal data changes during your relationship with us.</p>
+
+            <h2>V — Third-party links</h2>
+            <p>This website may include links to third-party websites, plug-ins, and applications. Clicking on these links or activating these connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements. When you leave our website, we encourage you to read the privacy policy of each website you visit.</p>
+
+            <h2>VI — The data we collect about you</h2>
+            <p>Personal data, or personal information, means any information about an individual that allows that person to be identified. It does not include data where the individual's identity has been removed (anonymous data).</p>
+            <p>We may collect, use, store and transfer different types of personal data about you, which we have grouped as follows:</p>
+            <ul>
+                <li>Identity Data includes first name, maiden name, last name, user name or similar identifier, marital status, title, date of birth, and gender.</li>
+                <li>Contact Data includes billing address, e-mail address, and telephone numbers.</li>
+                <li>Technical data includes IP (Internet Protocol) address, your login details, browser type, and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technologies on the devices you use to access this website.</li>
+                <li>Profile Data includes your username and password, interests, preferences, comments, and survey responses.</li>
+                <li>Usage Data includes information about how you use our websites and services.</li>
+                <li>Marketing and communication data includes your preferences for receiving marketing from our third parties and us and your communication preferences.</li>
+            </ul>
+            <p>We also collect, use and share aggregated data such as statistical or demographic data for any purpose. Aggregate data may be derived from your personal data but is not considered personal data by law because it does not directly or indirectly reveal your identity. For example, we may aggregate your usage data to calculate the percentage of users accessing a specific website feature.</p>
+            <p>We do not collect any special categories of personal data about you (including details of your race or ethnic origin, religious or philosophical beliefs, sex life, sexual orientation, political opinions, trade union membership, health information, and genetic and biometric data). We also do not collect information about criminal convictions and offenses.</p>
+            <p>Asset out in our terms and conditions, you are responsible for ensuring that any user-submitted content you submit to us does not contain the personal data of third parties who have not agreed to this privacy policy and our terms of use, and does not contain any special categories of personal data.</p>
+
+            <h2>VII — How your personal data is collected</h2>
+            <p>Where we are required to collect personal data by law or under a contract we have with you, and you do not provide this data on request, we may not be able to perform the contract we have or are trying to enter into with you (for example, to supply goods or services to you). In this case, we may have to cancel a product or service you have with us, but we will inform you if this is the case at the time.</p>
+            <p>We use several different methods to collect data from and about you, including via:</p>
+            <p>Direct interactions. You may provide us with your identity and contact details by filling in forms or contacting us by post, telephone, email, or otherwise. This includes personal data you provide when you:</p>
+            <ul class="plain-list">
+                <li>apply for our services;</li>
+                <li>submit information to us via our website;</li>
+                <li>subscribe to our service or publications;</li>
+                <li>request that marketing be sent to you; or</li>
+                <li>Give us feedback.</li>
+            </ul>
+            <p>Automated technologies or interactions. We may automatically collect technical data about your equipment, actions, and browsing habits when you interact with our website. We collect this personal data through the use of cookies, server logs, and other similar technologies. We may also receive technical data about you if you visit other websites that use our cookies.</p>
+            <p>Third parties or publicly available sources. We may receive personal data about you from various third parties and public sources as described below:</p>
+            <p>Technical Data from the following parties:</p>
+            <ul class="plain-list">
+                <li>analytics providers such as Google based outside the EU;</li>
+                <li>advertising networks; and</li>
+                <li>search information providers.</li>
+            </ul>
+            <ul>
+                <li>Contact, financial and transaction data from technical, payment, and delivery service providers.</li>
+                <li>Identity and contact data from data brokers or aggregators.</li>
+                <li>Identity and contact data from publicly available sources.</li>
+            </ul>
+
+            <h2>VIII — How we use your personal data</h2>
+            <p>We will only use your personal data where we are permitted to do so by law. Most often we will use your personal data in the following circumstances:</p>
+            <ul>
+                <li>Where we need to perform the contract we are about to enter into or have entered into with you.</li>
+                <li>Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.</li>
+                <li>Where we need to comply with a legal or regulatory obligation.</li>
+            </ul>
+            <p>Please see below for more information on the types of the legal basis we rely on to process your personal data.</p>
+
+            <h2>IX — Purposes for which we will use your personal data</h2>
+            <p>We have set out below a description of all the ways in which we intend to use your personal data and the legal basis on which we do so. We have also identified our legitimate interests, where applicable.</p>
+            <p>Please note that we may process your personal data for more than one lawful purpose depending on the specific purpose for which we use your data. Don't hesitate to contact us if you need details of the specific legal ground we rely on to process your personal data where more than one ground has been identified below.</p>
+
+            <h2>X — Marketing</h2>
+            <p>We strive to give you choices about certain uses of personal data, particularly around marketing and advertising:</p>
+
+            <h2>XI — Promotional offers from us</h2>
+            <p>We may use your identity, contact, technical, usage, and profile data to get an idea of what we think you might want or need or what you might be interested in. This is how we decide which services and offers may be relevant to you (we call this marketing).</p>
+            <p>You will receive marketing communications from us if you have requested information from us or purchased services from us or if you have provided us with your details when filling in a form or registering on one of our websites, and in each case, you have not opted in to receive this marketing.</p>
+
+            <h2>XII — Third-party marketing</h2>
+            <p>We will obtain your express consent before sharing your personal data with any company outside Aristofersólio - Lda for marketing purposes.</p>
+
+            <h2>XIII — Opting out</h2>
+            <p>You can ask third parties or us to stop sending you marketing messages at any time by following the unsubscribe links on any marketing message sent to you or by contacting us at any time.</p>
+            <p>Where you opt-out of receiving such marketing messages, this will not apply to personal data provided to us due to a product/service purchase, product/service experience, or other transaction.</p>
+
+            <h2>XIV — Cookies</h2>
+            <p>You can set your browser to refuse all or some of the browser's cookies or to alert you when websites set or access cookies. If you disable or reject cookies, please note that some parts of this website may become inaccessible or not function properly.</p>
+
+            <h2>XV — Change of purpose</h2>
+            <p>We will only use your personal data for the purposes for which we collected it unless we reasonably believe that we need to use it for another purpose and that this purpose is compatible with the original purpose. If you would like an explanation as to whether the processing for the new purpose is consistent with the original purpose, please get in touch with us.</p>
+            <p>If we need to use your personal data for an unrelated purpose, we will inform you and explain the legal basis for doing so.</p>
+            <p>Please note that we may process your personal data without your knowledge or consent, in accordance with the above rules, where required or permitted by law.</p>
+
+            <h2>XVI — Disclosure of your personal data</h2>
+            <p>We may share your personal data with the parties listed below:</p>
+            <ul>
+                <li>Internal third parties</li>
+                <li>External third parties</li>
+                <li>Third parties to whom we may choose to sell, transfer or merge parts of our business or assets. Alternatively, we may seek to acquire or merge with other companies. If a change in our business occurs, the new owners may use your personal data in the same manner as set out in this Privacy Policy.</li>
+            </ul>
+            <p>We require all third parties to respect the security of your personal data and treat it according to the law. We do not allow our third-party service providers to use your personal data for their own purposes and only permit them to process your personal data for specific purposes and in accordance with our instructions.</p>
+
+            <h2>XVII — International transfers</h2>
+            <p>We share your personal data between companies affiliated with Aristofersólio - Lda. If you reside in a European Union country, we will transfer your data outside the European Economic Area (EEA) as we are also based in Dubai.</p>
+            <p>If our external third parties are based outside the European Economic Area (EEA), the processing of your personal data will involve a transfer of data outside the EEA.</p>
+            <p>Whenever we transfer your personal data outside the EEA, we will ensure that a similar level of protection is afforded to it by ensuring that at least one of the following safeguards is implemented:</p>
+            <p>We will only transfer your personal data to countries that have been found to provide an adequate level of personal data protection by the European Commission.</p>
+            <p>Please contact us if you would like more information about the specific mechanism we use when transferring your personal data outside the EEA.</p>
+
+            <h2>XVIII — Data security</h2>
+            <p>We have appropriate security measures in place to prevent your personal data from being accidentally lost, unauthorized use or access, modification, or disclosure. In addition, we restrict access to your personal data to employees, agents, contractors, and other third parties who have a business need to know. They will only process your personal data on our instructions and are subject to a duty of confidentiality.</p>
+            <p>We have procedures in place to deal with any suspected breach of personal data and will notify you and any applicable regulatory body of a breach where we are legally required to do so.</p>
+            <p>No method of transmission over the Internet, or method of electronic storage, is 100% secure. Therefore, we cannot guarantee absolute security.</p>
+
+            <h2>XIX — Data retention</h2>
+            <p>We will only retain your personal data for as long as necessary to fulfill the purposes for which we collected it, including to satisfy any legal, accounting, or reporting requirements.</p>
+            <p>In determining the appropriate retention period for personal data, we take into account the amount, nature, and sensitivity of the personal data, the potential risk of harm from unauthorized use or disclosure of your personal data, the purposes for which we process your personal data and whether we can achieve those purposes by other means, and any applicable legal requirements.</p>
+            <p>In certain circumstances, you may ask us to delete your data; please see the section entitled "Request for deletion" below for more information.</p>
+            <p>In some circumstances, we may anonymize your personal data (so that it can no longer be associated with you or identify you) for research or statistical purposes, in which case we may use this information indefinitely without further notice.</p>
+
+            <h2>XX — Your legal rights</h2>
+            <p>In certain circumstances, you have rights under data protection laws in relation to your personal data. If you wish to exercise any of the above rights, please contact us.</p>
+            <p>You have the right to:</p>
+            <p>Request access to your personal data (commonly known as a "data subject access request"). This allows you to receive a copy of the personal data we hold about you and to check that we are processing it lawfully.</p>
+            <p>Request correction of the personal data we hold about you. This allows you to have incomplete or inaccurate data we hold about you corrected, although we may need to check the accuracy of new data you provide.</p>
+            <p>Request the deletion of your personal data. This allows you to ask us to delete or remove personal data where there is no valid reason for us to continue processing it. You also have the right to ask us to delete or erase your personal data where you have successfully exercised your right to object to processing (see below), where we may have processed your information unlawfully or where we are required to erase your personal data to comply with local law. Please note, however, that we may not always be able to comply with your request for erasure for specific legal reasons, which will be notified to you, if applicable, at the time of your request.</p>
+            <p>Object to the processing of your personal data where we rely on a legitimate interest (or that of a third party), and there is something about your particular circumstances that makes you want to object to the processing on this ground, as you feel that it impacts on your fundamental interests. rights and freedoms. You also have the right to object to the processing of your personal data for direct marketing purposes. In some cases, we can demonstrate that we have compelling legitimate grounds for processing your information that override your rights and freedoms.</p>
+            <p>Requesting the restriction of the processing of your personal data. This allows you to ask us to suspend the processing of your personal data in the following scenarios: (a) if you want us to establish the accuracy of the data; (b) where our use of the data is unlawful, but you do not want us to delete it; (c) where you need us to retain the data even though we no longer need it because you need it to establish, exercise or defend legal rights; or (d) you have objected to our use of your data, but we need to verify whether we have compelling legitimate grounds for using it.</p>
+            <p>Request the transfer of your personal data to you or a third party. We will provide your personal data to you or a third party you have chosen in a structured, commonly used, and machine-readable format. Note that this right only applies to automated information that you initially authorised to be used or where we have used the information to perform a contract with you.</p>
+            <p>Withdraw consent at any time where we rely on consent to process your personal data. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent. If you withdraw your consent, we may not be able to provide you with certain products or services. We will notify you if this is the case at the time you withdraw your consent.</p>
+
+            <h2>XXI — No fees usually required</h2>
+            <p>You will not be charged a fee to access your personal data (or exercise any of your other rights). However, we may charge a reasonable fee if your request is manifestly unfounded, repetitive, or excessive. Alternatively, we may refuse to comply with your request in these circumstances.</p>
+
+            <h2>XXII — What we may need from you</h2>
+            <p>We may ask you for specific information to help us confirm your identity and ensure your right to access your personal data (or to exercise any of your other rights). This is a security measure to ensure that personal data is not disclosed to anyone who does not have a right to receive it. We may also contact you to request additional information about your request in order to expedite our response.</p>
+
+            <h2>XXIII — Response time</h2>
+            <p>We try to respond to all legitimate requests within one month. Sometimes it may take us longer than a month if your request is particularly complex or if you have made several requests. In this case, we will inform you and keep you informed.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="wrap">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">Aristofersólio</div>
+                <p class="footer-tagline">A next-generation digital content agency for Life Science brands. Based in Porto, Portugal.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="we-are.html">We Are</a></li>
+                    <li><a href="our-services.html">Our Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="meet-the-team.html">Meet the Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="terms-of-use.html">Terms of Use</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="https://www.livroreclamacoes.pt/Inicio/" target="_blank" rel="noopener">Complaints Book</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:help@aristofersolio.com">help@aristofersolio.com</a></li>
+                    <li><a href="https://www.linkedin.com/company/aristoagency/">LinkedIn</a></li>
+                </ul>
+                <h4 style="margin-top: 32px;">Office</h4>
+                <p class="footer-address">Rua Augusto Rosa, Nº 79<br>Sé 4000-098<br>Porto, Portugal</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Aristofersólio Agency. All rights reserved.</span>
+            <span>Porto, Portugal</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
