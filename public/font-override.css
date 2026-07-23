@@ -23,9 +23,9 @@
    hero headline wraps an extra line. Trim it slightly to keep the original
    line breaks. Remove this rule if you revert the font. */
 .hero-title {
-  /* 5.6vw keeps laptop screens (≈1440px, e.g. MacBook Air) around 80px
-     instead of hitting a 100px cap that overwhelmed the viewport. */
-  font-size: clamp(38px, 5.6vw, 92px) !important;
+  /* Sized for laptop screens (≈1440px, e.g. MacBook Air): ~65px.
+     Reduced 20% from the previous 5.6vw/92px, which still read too large. */
+  font-size: clamp(30px, 4.5vw, 74px) !important;
 }
 
 /* "We are Aristofersólio" section heading — Regular reads better than Light here.
