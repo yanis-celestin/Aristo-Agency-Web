@@ -58,6 +58,42 @@
         .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 7.5vw, 104px); font-weight: 300; line-height: 0.94; letter-spacing: -0.025em; margin-bottom: 28px; }
         .hero-title em { font-style: italic; color: var(--accent); }
         .hero-lead { font-size: clamp(15px, 1.5vw, 18px); line-height: 1.78; color: var(--mid); max-width: 520px; }
+        /* Hero: copy left, credentials right */
+        .hero-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: clamp(40px, 7vw, 110px); align-items: end; }
+        .creds { border-top: 1px solid var(--ink); }
+        .cred {
+            display: flex; gap: 13px; padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14.5px; line-height: 1.5; color: var(--mid);
+        }
+        .cred::before { content: ''; flex: 0 0 auto; width: 5px; height: 5px; margin-top: 8px; border-radius: 50%; background: var(--accent); }
+
+        /* Omnichannel pillars — dark band */
+        .pillars-band { background: var(--ink); color: var(--white); }
+        .pillars-band .s-label::before { background: rgba(255,255,255,0.25); }
+        .pillars-band .s-label span { color: rgba(255,255,255,0.4); }
+        .pillars-head {
+            font-family: 'Cormorant Garamond', serif; font-weight: 300;
+            font-size: clamp(32px, 4.4vw, 58px); line-height: 1.06; letter-spacing: -0.015em;
+            max-width: 20ch; margin-bottom: clamp(44px, 5vw, 72px);
+        }
+        .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(22px, 2.6vw, 40px); }
+        .pillar {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 10px; padding: clamp(26px, 2.8vw, 38px);
+        }
+        .pillar h3 {
+            font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: #8FBEFF; font-weight: 400; margin-bottom: 18px;
+        }
+        .pillar p { font-size: 14.5px; line-height: 1.75; color: rgba(255,255,255,0.72); }
+
+        /* Heading above the iPad gallery */
+        .gallery-head {
+            font-family: 'Cormorant Garamond', serif; font-weight: 300;
+            font-size: clamp(30px, 3.9vw, 52px); line-height: 1.08; letter-spacing: -0.015em;
+            max-width: 22ch; margin-bottom: clamp(36px, 4vw, 56px);
+        }
 
         /* SECTION + LABEL */
         .section { padding: var(--pad) 0; }
@@ -135,6 +171,8 @@
         @media (max-width: 900px) {
             .nav-links { display: none; }
             .gallery { grid-template-columns: 1fr; gap: 40px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 46px; align-items: start; }
+            .pillars { grid-template-columns: 1fr; }
             .footer-top { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 560px) {
@@ -160,10 +198,18 @@
 </nav>
 
 <section class="hero">
-    <div class="wrap">
-        <p class="hero-eyebrow">Selected Work</p>
-        <h1 class="hero-title">Projects that <em>perform</em></h1>
-        <p class="hero-lead">A look at the digital content and applications we've crafted for Life Science brands — built to engage professionals and move information further.</p>
+    <div class="wrap hero-grid">
+        <div>
+            <p class="hero-eyebrow">Selected Work</p>
+            <h1 class="hero-title">Projects that <em>perform</em></h1>
+            <p class="hero-lead">A look at the digital content and applications we've crafted for Life Science brands — built to engage professionals and move information further.</p>
+        </div>
+        <div class="creds">
+            <div class="cred">Digital (CLM) native agency</div>
+            <div class="cred">100% dedicated to your B2B challenges</div>
+            <div class="cred">Medically approved by a panel of HCPs</div>
+            <div class="cred">Certified in CLM Solutions</div>
+        </div>
     </div>
 </section>
 
@@ -183,9 +229,31 @@
 </section>
 
 <!-- GALLERY: iPad mockup visuals -->
-<section class="section" style="padding-top: 0;">
+<section class="section pillars-band">
     <div class="wrap">
-        <div class="s-label"><span>The Apps We Build</span></div>
+        <div class="s-label"><span>Omnichannel</span></div>
+        <h2 class="pillars-head">We make your content ready for omnichannel</h2>
+        <div class="pillars">
+            <div class="pillar">
+                <h3>Personalized</h3>
+                <p>Adapting messages and formats to behaviors and needs, creating contents that resonates with each individual.</p>
+            </div>
+            <div class="pillar">
+                <h3>Orchestrated</h3>
+                <p>Transforming MedReps into "campaign orchestrators" responsible for ensuring the best possible brand experience.</p>
+            </div>
+            <div class="pillar">
+                <h3>Measured</h3>
+                <p>Tracking the impact and performance of each channel and content module to adjust and optimize the marketing strategy in real-time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <div class="s-label"><span>What We Ship</span></div>
+        <h2 class="gallery-head">We design, build and ship CLM 2.0 presentations</h2>
         <div class="gallery">
             <div class="shot">
                 <div class="shot-card">
