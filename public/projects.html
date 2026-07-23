@@ -68,25 +68,19 @@
         }
         .cred::before { content: ''; flex: 0 0 auto; width: 5px; height: 5px; margin-top: 8px; border-radius: 50%; background: var(--accent); }
 
-        /* Omnichannel pillars — dark band */
-        .pillars-band { background: var(--ink); color: var(--white); }
-        .pillars-band .s-label::before { background: rgba(255,255,255,0.25); }
-        .pillars-band .s-label span { color: rgba(255,255,255,0.4); }
+        /* Omnichannel pillars — light, text-only three columns */
         .pillars-head {
             font-family: 'Cormorant Garamond', serif; font-weight: 300;
-            font-size: clamp(32px, 4.4vw, 58px); line-height: 1.06; letter-spacing: -0.015em;
-            max-width: 20ch; margin-bottom: clamp(44px, 5vw, 72px);
+            font-size: clamp(30px, 4vw, 54px); line-height: 1.06; letter-spacing: -0.015em;
+            max-width: 20ch; margin-bottom: clamp(40px, 4.5vw, 64px);
         }
-        .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(22px, 2.6vw, 40px); }
-        .pillar {
-            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.10);
-            border-radius: 10px; padding: clamp(26px, 2.8vw, 38px);
-        }
+        .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 64px); }
+        .pillar { border-top: 1px solid var(--border); padding-top: 22px; }
         .pillar h3 {
             font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-            color: #8FBEFF; font-weight: 400; margin-bottom: 18px;
+            color: var(--accent); font-weight: 400; margin-bottom: 14px;
         }
-        .pillar p { font-size: 14.5px; line-height: 1.75; color: rgba(255,255,255,0.72); }
+        .pillar p { font-size: 14.5px; line-height: 1.75; color: var(--mid); }
 
         /* Heading above the iPad gallery */
         .gallery-head {
@@ -229,7 +223,7 @@
 </section>
 
 <!-- GALLERY: iPad mockup visuals -->
-<section class="section pillars-band">
+<section class="section">
     <div class="wrap">
         <div class="s-label"><span>Omnichannel</span></div>
         <h2 class="pillars-head">We make your content ready for omnichannel</h2>
