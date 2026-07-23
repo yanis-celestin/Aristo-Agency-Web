@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact — Aristofersólio | Coming Soon</title>
+    <title>Contact — Aristofersólio | Life Science Marketing Agency</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -12,70 +12,301 @@
         :root {
             --bg: #F9F9F8; --ink: #0F1923; --accent: #1440D0;
             --mid: #5C6980; --border: #E0E5EE; --white: #FFFFFF;
+            --pad: clamp(80px, 10vw, 140px);
             --gutter: clamp(24px, 5vw, 80px);
+            --max: 1240px;
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'DM Sans', sans-serif; font-weight: 300;
-            background: var(--bg); color: var(--ink);
-            -webkit-font-smoothing: antialiased;
-            min-height: 100svh; display: flex; flex-direction: column;
+            background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased;
         }
         a { color: inherit; text-decoration: none; }
-        .head { padding: 30px var(--gutter) 0; }
-        .head a {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 19px; font-weight: 500; letter-spacing: 0.02em;
+        img { display: block; max-width: 100%; }
+        .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+        /* NAV */
+        nav {
+            position: fixed; inset: 0 0 auto; z-index: 100;
+            background: rgba(249, 249, 248, 0.90);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
         }
-        main {
-            flex: 1; display: grid; place-items: center;
-            padding: 40px var(--gutter) 80px; text-align: center;
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .nav-logo {
+            display: inline-block; width: 149px; height: 22px;
+            text-indent: -9999px; overflow: hidden; white-space: nowrap;
+            background-color: currentColor;
+            -webkit-mask: url('/logo.svg') no-repeat center / contain;
+            mask: url('/logo.svg') no-repeat center / contain;
         }
-        .eyebrow {
-            display: inline-flex; align-items: center; gap: 14px; margin-bottom: 30px;
-            font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+        .nav-links { display: flex; gap: 36px; list-style: none; }
+        .nav-links a { font-size: 11.5px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--mid); transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+        .nav-cta { display: inline-block; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--ink); padding: 11px 28px; transition: background 0.2s, color 0.2s; }
+        .nav-cta, .nav-cta:hover { background: var(--ink); color: var(--white); }
+
+        /* HERO */
+        .hero {
+            min-height: 48svh; padding-top: 68px; display: grid; align-items: end;
+            padding-bottom: clamp(36px, 5vh, 68px); background: var(--bg); color: var(--ink);
         }
-        .eyebrow::before, .eyebrow::after {
-            content: ''; width: 28px; height: 1px; background: currentColor;
+        .hero .wrap { width: 100%; }
+        .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 30px; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+        .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: currentColor; flex-shrink: 0; }
+        .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(46px, 7vw, 96px); font-weight: 300; line-height: 0.94; letter-spacing: -0.025em; margin-bottom: 26px; }
+        .hero-title em { font-style: italic; color: var(--accent); }
+        .hero-lead { font-size: clamp(15px, 1.5vw, 18px); line-height: 1.78; color: var(--mid); max-width: 520px; }
+
+        /* SECTION */
+        .section { padding: clamp(56px, 7vw, 96px) 0 var(--pad); }
+        .contact-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(48px, 8vw, 120px); align-items: start; }
+
+        /* FORM */
+        .field { margin-bottom: 30px; }
+        .field label {
+            display: block; font-size: 10.5px; letter-spacing: 0.2em;
+            text-transform: uppercase; color: var(--mid); margin-bottom: 10px;
         }
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(44px, 6.5vw, 84px); font-weight: 300;
-            line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 26px;
+        .field input, .field textarea {
+            width: 100%; background: transparent; border: none;
+            border-bottom: 1px solid var(--border);
+            padding: 10px 0 12px; font-family: inherit; font-size: 16px;
+            font-weight: 300; color: var(--ink); transition: border-color 0.25s;
         }
-        h1 em { font-style: italic; color: var(--accent); }
-        .sub {
-            font-size: clamp(15px, 1.5vw, 17px); line-height: 1.8;
-            color: var(--mid); max-width: 420px; margin: 0 auto 40px;
-        }
-        .email {
-            display: inline-block; font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(22px, 3vw, 32px); color: var(--accent);
-            border-bottom: 1px solid var(--border); padding-bottom: 4px; margin-bottom: 44px;
-            transition: border-color 0.2s;
-        }
-        .email:hover { border-color: var(--accent); }
+        .field textarea { resize: vertical; min-height: 120px; line-height: 1.6; }
+        .field input:focus, .field textarea:focus { outline: none; border-bottom-color: var(--accent); }
+        .field input::placeholder, .field textarea::placeholder { color: #A8B0BE; }
+        .hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
         .btn-primary {
-            display: block; width: fit-content; margin: 0 auto;
-            background: var(--ink); color: var(--white);
-            padding: 15px 36px; font-size: 11.5px; letter-spacing: 0.12em;
-            text-transform: uppercase; transition: background 0.2s;
+            display: inline-block; background: var(--ink); color: var(--white);
+            padding: 16px 42px; font-size: 11.5px; letter-spacing: 0.12em;
+            text-transform: uppercase; border: none; cursor: pointer;
+            font-family: inherit; transition: background 0.2s;
         }
         .btn-primary:hover { background: var(--accent); }
+        .btn-primary:disabled { opacity: 0.55; cursor: default; }
+        .form-status {
+            margin-top: 22px; font-size: 14px; line-height: 1.6; display: none;
+            padding: 14px 18px; border-left: 2px solid var(--border);
+        }
+        .form-status.show { display: block; }
+        .form-status.ok { color: var(--ink); border-left-color: var(--accent); background: #EEF2FF; }
+        .form-status.err { color: #A3323F; border-left-color: #A3323F; background: #FBEEF0; }
+
+        /* DETAILS COLUMN */
+        .detail-block { margin-bottom: 40px; }
+        .detail-block h3 {
+            font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--accent); font-weight: 400; margin-bottom: 14px;
+        }
+        .detail-block p, .detail-block a { font-size: 15px; line-height: 1.75; color: var(--mid); }
+        .detail-block a { border-bottom: 1px solid var(--border); transition: color 0.2s, border-color 0.2s; }
+        .detail-block a:hover { color: var(--ink); border-color: var(--ink); }
+
+        /* FOOTER */
+        footer { background: var(--ink); color: var(--white); }
+        .footer-top { padding: clamp(64px, 9vw, 104px) 0 64px; display: grid; grid-template-columns: 2.2fr 1fr 1fr 1.2fr; gap: 56px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 36px; }
+        .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 400; margin-bottom: 18px; }
+        .footer-tagline { font-size: 13.5px; color: rgba(255,255,255,0.35); line-height: 1.72; max-width: 240px; }
+        .footer-col h4 { font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 22px; font-weight: 400; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 13px; }
+        .footer-col ul a { font-size: 13.5px; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+        .footer-col ul a:hover { color: var(--white); }
+        .footer-address { font-size: 13.5px; color: rgba(255,255,255,0.4); line-height: 1.75; margin-top: 6px; }
+        .footer-bottom { padding-bottom: 40px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.22); }
+
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+            .footer-top { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 560px) {
+            .footer-top { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <header class="head">
-        <a href="/">Aristofersólio</a>
-    </header>
-    <main>
-        <div>
-            <p class="eyebrow">Contact</p>
-            <h1>Work in <em>progress</em></h1>
-            <p class="sub">Our full contact page is coming soon. In the meantime, we'd love to hear from you:</p>
-            <a href="mailto:help@aristofersolio.com" class="email">help@aristofersolio.com</a>
-            <a href="/" class="btn-primary">Back to Home</a>
+
+<nav>
+    <div class="wrap">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Aristofersólio</a>
+            <ul class="nav-links">
+                <li><a href="we-are.html">We Are</a></li>
+                <li><a href="our-services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="meet-the-team.html">Team</a></li>
+            </ul>
+            <a href="contacts.html" class="nav-cta">Contact</a>
         </div>
-    </main>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="wrap">
+        <p class="hero-eyebrow">Contact</p>
+        <h1 class="hero-title">Let's start a<br><em>conversation</em></h1>
+        <p class="hero-lead">Tell us about your brand, your audience and what you'd like to achieve — we'll get back to you shortly.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap">
+        <div class="contact-grid">
+            <!-- FORM -->
+            <div>
+                <form id="contact-form" novalidate>
+                    <!--
+                      ⚠️  ACTION REQUIRED: replace YOUR-KEY-HERE with your Web3Forms access key.
+                      Get one free in ~1 min at https://web3forms.com — enter help@aristofersolio.com
+                      and they email you the key. Submissions then arrive at that inbox.
+                    -->
+                    <input type="hidden" name="access_key" value="YOUR-KEY-HERE">
+                    <input type="hidden" name="subject" value="New enquiry from aristofersolio.com">
+                    <input type="hidden" name="from_name" value="Aristofersólio website">
+                    <!-- honeypot: real people never fill this in -->
+                    <div class="hp" aria-hidden="true">
+                        <label>Do not fill this in <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+                    </div>
+
+                    <div class="field">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+                    </div>
+                    <div class="field">
+                        <label for="company">Company <span style="text-transform:none;letter-spacing:0">(optional)</span></label>
+                        <input type="text" id="company" name="company" placeholder="Company name">
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell us a little about your project…" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submit-btn">Send Message</button>
+                    <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+
+            <!-- DETAILS -->
+            <div>
+                <div class="detail-block">
+                    <h3>Email</h3>
+                    <a href="mailto:help@aristofersolio.com">help@aristofersolio.com</a>
+                </div>
+                <div class="detail-block">
+                    <h3>Office</h3>
+                    <p>Rua Augusto Rosa, Nº 79<br>Sé 4000-098<br>Porto, Portugal</p>
+                </div>
+                <div class="detail-block">
+                    <h3>Follow</h3>
+                    <a href="https://www.linkedin.com/company/aristoagency/">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="wrap">
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">Aristofersólio</div>
+                <p class="footer-tagline">A next-generation digital content agency for Life Science brands. Based in Porto, Portugal.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="we-are.html">We Are</a></li>
+                    <li><a href="our-services.html">Our Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="meet-the-team.html">Meet the Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="https://www.livroreclamacoes.pt/Inicio/">Complaints Book</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:help@aristofersolio.com">help@aristofersolio.com</a></li>
+                    <li><a href="https://www.linkedin.com/company/aristoagency/">LinkedIn</a></li>
+                </ul>
+                <h4 style="margin-top: 32px;">Office</h4>
+                <p class="footer-address">Rua Augusto Rosa, Nº 79<br>Sé 4000-098<br>Porto, Portugal</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 Aristofersólio Agency. All rights reserved.</span>
+            <span>Porto, Portugal</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function () {
+    var form = document.getElementById('contact-form');
+    var statusEl = document.getElementById('form-status');
+    var btn = document.getElementById('submit-btn');
+
+    function say(msg, kind) {
+        statusEl.textContent = msg;
+        statusEl.className = 'form-status show ' + kind;
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Basic validation (we use novalidate so messages stay in our own style)
+        if (!form.name.value.trim() || !form.email.value.trim() || !form.message.value.trim()) {
+            say('Please fill in your name, email and message.', 'err');
+            return;
+        }
+
+        var key = form.access_key.value;
+        if (!key || key === 'YOUR-KEY-HERE') {
+            say('This form isn’t connected yet — the access key still needs to be added. In the meantime, email us at help@aristofersolio.com.', 'err');
+            return;
+        }
+
+        btn.disabled = true;
+        say('Sending…', 'ok');
+
+        var data = {};
+        new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+            if (json.success) {
+                form.reset();
+                say('Thank you — your message is on its way. We’ll be in touch shortly.', 'ok');
+            } else {
+                say('Sorry, something went wrong sending your message. Please email help@aristofersolio.com.', 'err');
+            }
+        })
+        .catch(function () {
+            say('Sorry, something went wrong sending your message. Please email help@aristofersolio.com.', 'err');
+        })
+        .finally(function () { btn.disabled = false; });
+    });
+})();
+</script>
+
 </body>
 </html>
