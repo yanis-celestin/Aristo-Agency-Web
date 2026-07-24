@@ -255,6 +255,47 @@
         @media (max-width: 560px) {
             .footer-top { grid-template-columns: 1fr; }
         }
+
+        /* NEWSLETTER (footer) */
+        .footer-news {
+            display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 80px);
+            align-items: start; padding: clamp(44px, 5vw, 64px) 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .footer-news h4 {
+            font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: rgba(255,255,255,0.3); margin-bottom: 14px; font-weight: 400;
+        }
+        .news-intro { font-size: 13.5px; line-height: 1.7; color: rgba(255,255,255,0.45); max-width: 330px; }
+        .news-row { display: flex; gap: 14px; align-items: flex-end; }
+        .news-row input[type="email"] {
+            flex: 1; min-width: 0; background: transparent; border: none;
+            border-bottom: 1px solid rgba(255,255,255,0.22);
+            padding: 8px 0 10px; font-family: inherit; font-size: 15px; font-weight: 300;
+            color: #FFFFFF; transition: border-color 0.25s;
+        }
+        .news-row input[type="email"]::placeholder { color: rgba(255,255,255,0.3); }
+        .news-row input[type="email"]:focus { outline: none; border-bottom-color: #FFFFFF; }
+        .news-btn {
+            flex: 0 0 auto; background: #FFFFFF; color: var(--ink); border: none;
+            padding: 12px 26px; font-family: inherit; font-size: 10.5px; letter-spacing: 0.14em;
+            text-transform: uppercase; cursor: pointer; transition: background 0.2s, color 0.2s;
+        }
+        .news-btn:hover { background: var(--accent); color: #FFFFFF; }
+        .news-btn:disabled { opacity: 0.5; cursor: default; }
+        .news-consent {
+            display: flex; gap: 9px; align-items: flex-start; margin-top: 16px;
+            font-size: 12px; line-height: 1.55; color: rgba(255,255,255,0.4); cursor: pointer;
+        }
+        .news-consent input { margin-top: 2px; flex: 0 0 auto; accent-color: #FFFFFF; }
+        .news-consent a { color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.25); }
+        .news-consent a:hover { color: #FFFFFF; }
+        .news-status { margin-top: 14px; font-size: 12.5px; line-height: 1.6; display: none; }
+        .news-status.show { display: block; }
+        .news-status.ok { color: #9FE8C0; }
+        .news-status.err { color: #F2A7B0; }
+        .news-hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+        @media (max-width: 760px) { .footer-news { grid-template-columns: 1fr; gap: 24px; } }
     </style>
 </head>
 <body>
@@ -370,6 +411,29 @@
 
 <footer>
     <div class="wrap">
+        <div class="footer-news">
+            <div>
+                <h4>Join our mailing list</h4>
+                <p class="news-intro">Occasional insights on Life Science content, omnichannel and CLM. No spam — unsubscribe any time.</p>
+            </div>
+            <form class="news-form">
+                <input type="hidden" name="access_key" value="1335f5b0-7040-4e6b-a126-9e93c0f45800">
+                <input type="hidden" name="subject" value="Newsletter signup — aristofersolio.com">
+                <input type="hidden" name="from_name" value="Aristofersólio website">
+                <div class="news-hp" aria-hidden="true">
+                    <label>Do not fill this in <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+                </div>
+                <div class="news-row">
+                    <input type="email" name="email" placeholder="your@email.com" aria-label="Your email address" required>
+                    <button type="submit" class="news-btn">Subscribe</button>
+                </div>
+                <label class="news-consent">
+                    <input type="checkbox" name="consent" value="yes" required>
+                    <span>I agree to receive occasional emails and accept the <a href="privacy-policy.html">Privacy Policy</a>.</span>
+                </label>
+                <p class="news-status" role="status" aria-live="polite"></p>
+            </form>
+        </div>
         <div class="footer-top">
             <div>
                 <div class="footer-logo">Aristofersólio</div>
@@ -533,6 +597,42 @@
         camera.aspect = W / H; camera.updateProjectionMatrix();
         renderer.setSize(W, H, false);
     }, { passive: true });
+})();
+</script>
+
+<script>
+/* Footer newsletter signup */
+(function () {
+    var form = document.querySelector('.news-form');
+    if (!form) return;
+    var status = form.querySelector('.news-status');
+    var btn = form.querySelector('.news-btn');
+    function say(msg, kind) { status.textContent = msg; status.className = 'news-status show ' + kind; }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.email.value.trim()) { say('Please enter your email address.', 'err'); return; }
+        if (!form.consent.checked) { say('Please tick the consent box to subscribe.', 'err'); return; }
+
+        btn.disabled = true;
+        say('Subscribing\u2026', 'ok');
+
+        var data = {};
+        new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+            if (j.success) { form.reset(); say('Thank you \u2014 you\u2019re on the list.', 'ok'); }
+            else { say('Sorry, something went wrong. Please email help@aristofersolio.com.', 'err'); }
+        })
+        .catch(function () { say('Sorry, something went wrong. Please email help@aristofersolio.com.', 'err'); })
+        .finally(function () { btn.disabled = false; });
+    });
 })();
 </script>
 
