@@ -42,3 +42,24 @@
 .eyebrow {
   font-weight: 500 !important;
 }
+
+/* ── CLIENT COLOUR TRIAL ──────────────────────────────────────────────
+   Accent from the brand palette's blue family (was #1440D0).
+   The palette's primary #C3E1F1 is far too light to be legible on the
+   light background (~1.1:1), so this is a deeper tone of the same hue:
+   on-brand but readable (~4:1). Delete this block to restore #1440D0. */
+:root { --accent: #63BEE5 !important; }
+
+/* The pages also hardcode a lighter blue for accents that sit on DARK
+   backgrounds (dark hero, process steps, team roles, belief quote).
+   Force those to the same brand blue so the whole site is consistent
+   for review. The hero's particle animation colours are NOT touched. */
+.hero-eyebrow,
+.hero-title em,
+.step-phase,
+.member-role,
+.belief-quote em {
+  color: #63BEE5 !important;
+}
+.step-num { color: rgba(99, 190, 229, 0.5) !important; }
+.hero .btn-primary:hover { background: #63BEE5 !important; }
