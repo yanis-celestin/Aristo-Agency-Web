@@ -35,11 +35,20 @@
   font-size: clamp(26px, 3.1vw, 42px) !important;
 }
 
-/* Eyebrows / small tracked labels — heavier so they read better at Raleway's light default */
+/* Eyebrows / small tracked labels — heavier so they read better at Raleway's
+   light default. Covers every small-caps label of this role site-wide so they
+   all share one weight (section eyebrows, pillar/step/role tags, footer heads). */
 .hero-eyebrow,
 .s-label span,
 .partners-label,
-.eyebrow {
+.eyebrow,
+.pillar-tag,
+.step-phase,
+.member-role,
+.ety-part,
+.detail-block h3,
+.footer-col h4,
+.footer-news h4 {
   font-weight: 500 !important;
 }
 
