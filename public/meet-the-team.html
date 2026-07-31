@@ -65,17 +65,11 @@
         .s-label::before { content: ''; width: 28px; height: 1px; background: var(--accent); flex-shrink: 0; }
         .s-label span { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
 
-        /* TEAM CAROUSEL — slow, continuous marquee that pauses on hover */
-        .team-marquee { overflow: hidden; padding: 8px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
-        .team-track { display: flex; width: max-content; animation: teamScroll 50s linear infinite; }
-        .team-marquee:hover .team-track { animation-play-state: paused; }
-        @keyframes teamScroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
+        /* TEAM — static grid: core team row, then a partners row */
+        .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2vw, 28px); }
+        .team-subhead { margin-top: clamp(54px, 6vw, 88px); }
         .member {
-            position: relative; flex: 0 0 auto; margin-right: 24px;
-            width: clamp(228px, 21vw, 288px); aspect-ratio: 3 / 4;
+            position: relative; aspect-ratio: 3 / 4;
             border-radius: 6px; overflow: hidden; background: #D9DCE1;
         }
         .member-photo {
@@ -98,8 +92,8 @@
         .member-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 400; line-height: 1.08; margin-bottom: 5px; }
         .member-role { font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8FBEFF; margin-bottom: 12px; }
         .member-bio { font-size: 13px; line-height: 1.55; color: rgba(255, 255, 255, 0.82); }
-        @media (prefers-reduced-motion: reduce) {
-            .team-track { animation: none; }
+        @media (max-width: 900px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         /* CTA */
@@ -197,14 +191,11 @@
     </div>
 </section>
 
-<!-- TEAM CAROUSEL -->
+<!-- TEAM -->
 <section class="section" style="padding-bottom: clamp(60px, 8vw, 110px);">
     <div class="wrap">
-        <div class="s-label"><span>Meet the Team</span></div>
-    </div>
-    <div class="team-marquee">
-        <div class="team-track">
-            <!-- SET 1 -->
+        <div class="s-label"><span>The Team</span></div>
+        <div class="team-grid">
             <div class="member">
                 <div class="member-photo"><img src="/team/didier.png" alt="Didier Celestin"></div>
                 <div class="member-info">
@@ -237,11 +228,14 @@
                     <p class="member-bio">Designer specialized in visual communication, brand identity and digital interfaces, with strong video-editing skills across formats.</p>
                 </div>
             </div>
+        </div>
+        <div class="s-label team-subhead"><span>Partners</span></div>
+        <div class="team-grid">
             <div class="member">
                 <div class="member-photo"><img src="/team/filipa.png" alt="Filipa Lopes"></div>
                 <div class="member-info">
                     <div class="member-name">Filipa Lopes</div>
-                    <div class="member-role">Designer · Partner</div>
+                    <div class="member-role">Designer</div>
                     <p class="member-bio">Communication designer skilled in typography, branding and digital design — clear, engaging visuals with consistency and impact.</p>
                 </div>
             </div>
@@ -249,56 +243,7 @@
                 <div class="member-photo"><img src="/team/timothee.png" alt="Timothée Reynaud"></div>
                 <div class="member-info">
                     <div class="member-name">Timothée Reynaud</div>
-                    <div class="member-role">Developer · Partner</div>
-                    <p class="member-bio">Front-end developer with 7+ years in React, Vue and Svelte across logistics, AI and customer-experience products.</p>
-                </div>
-            </div>
-            <!-- SET 2 (duplicate for seamless loop) -->
-            <div class="member" aria-hidden="true">
-                <div class="member-photo"><img src="/team/didier.png" alt=""></div>
-                <div class="member-info">
-                    <div class="member-name">Didier Celestin</div>
-                    <div class="member-role">Co-Owner &amp; Manager</div>
-                    <p class="member-bio">Expert in sales enablement and field-force training, Didier has led large-scale global programs across healthcare, high-end retail and CPG.</p>
-                </div>
-            </div>
-            <div class="member" aria-hidden="true">
-                <div class="member-photo"><img src="/team/renata.png" alt=""></div>
-                <div class="member-info">
-                    <div class="member-name">Renata Maia</div>
-                    <div class="member-role">Co-Owner · Marketing Director</div>
-                    <p class="member-bio">With a Communication Sciences background and a specialization in Health, Renata leads writing, marketing and multilingual communication.</p>
-                </div>
-            </div>
-            <div class="member" aria-hidden="true">
-                <div class="member-photo"><img src="/team/beatriz.png" alt=""></div>
-                <div class="member-info">
-                    <div class="member-name">Beatriz Almeida</div>
-                    <div class="member-role">Content Manager</div>
-                    <p class="member-bio">Blending creativity, business insight and innovation, Beatriz turns complex ideas into clear, human-centered strategies.</p>
-                </div>
-            </div>
-            <div class="member" aria-hidden="true">
-                <div class="member-photo"><img src="/team/yanis.png" alt=""></div>
-                <div class="member-info">
-                    <div class="member-name">Yanis Celestin</div>
-                    <div class="member-role">Digital Designer</div>
-                    <p class="member-bio">Designer specialized in visual communication, brand identity and digital interfaces, with strong video-editing skills across formats.</p>
-                </div>
-            </div>
-            <div class="member" aria-hidden="true">
-                <div class="member-photo"><img src="/team/filipa.png" alt=""></div>
-                <div class="member-info">
-                    <div class="member-name">Filipa Lopes</div>
-                    <div class="member-role">Designer · Partner</div>
-                    <p class="member-bio">Communication designer skilled in typography, branding and digital design — clear, engaging visuals with consistency and impact.</p>
-                </div>
-            </div>
-            <div class="member" aria-hidden="true">
-                <div class="member-photo"><img src="/team/timothee.png" alt=""></div>
-                <div class="member-info">
-                    <div class="member-name">Timothée Reynaud</div>
-                    <div class="member-role">Developer · Partner</div>
+                    <div class="member-role">Developer</div>
                     <p class="member-bio">Front-end developer with 7+ years in React, Vue and Svelte across logistics, AI and customer-experience products.</p>
                 </div>
             </div>
