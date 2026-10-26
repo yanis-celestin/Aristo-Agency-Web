@@ -7,13 +7,13 @@
 
   Current trial font: RALEWAY
   ─────────────────────────────────────────────────────────────────────────────
-  TO TRY A DIFFERENT FONT: change the @import URL and the font-family name below.
+  TO TRY A DIFFERENT FONT: add its @font-face rules to /fonts/fonts.css (fonts are
+  self-hosted for GDPR — don't link Google Fonts) and change the font-family below.
   TO REVERT to the original Cormorant Garamond + DM Sans typography: delete
   everything in this file (leave it empty). The original design returns instantly
   on every page — no other files need to change.
   ─────────────────────────────────────────────────────────────────────────────
 */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
 
 * {
   font-family: 'Raleway', sans-serif !important;
